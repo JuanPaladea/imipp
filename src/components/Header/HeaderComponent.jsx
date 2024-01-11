@@ -2,8 +2,8 @@ import React from 'react'
 
 const HeaderComponent = () => {
   return (
-    <header>
-      <div className="w-full bg-center bg-cover max-w-7xl mx-auto"
+    <header >
+      <div className="w-full h-screen bg-center bg-cover mx-auto"
         style={{
           backgroundImage: 'url(https://i.imgur.com/VyhtrBj.jpeg)',
         }}>

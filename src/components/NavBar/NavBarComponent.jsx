@@ -4,7 +4,6 @@ import {
   AcademicCapIcon,
   Bars3Icon,
   BeakerIcon,
-  BugAntIcon,
   ChevronDoubleRightIcon,
   UsersIcon,
   XMarkIcon,
@@ -40,8 +39,8 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b border-gray-200" aria-label="Global">
+    <header className="bg-opacity-100 fixed top-0 w-full mx-auto">
+      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">IMIPP</span>
@@ -59,15 +58,15 @@ export default function Example() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-6 w-6 text-white" aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/" className="text-sm font-semibold leading-6 text-gray-900 p-1 rounded hover:bg-[#def5ff] transition background-color ease-in 150ms">
+          <Link to="/" className="text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
             Inicio
           </Link>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 p-1 rounded hover:bg-[#def5ff] transition background-color ease-in 150ms">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
               Grupos de Investigación
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
@@ -89,7 +88,7 @@ export default function Example() {
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-[#009cde]" aria-hidden="true" />
+                        <item.icon className="h-6 w-6 text-white group-hover:text-[#009cde]" aria-hidden="true" />
                       </div>
                       <div className="flex-auto">
                         <a href={item.href} className="block font-semibold text-gray-900">
@@ -105,9 +104,9 @@ export default function Example() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 p-1 rounded hover:bg-[#def5ff] transition background-color ease-in 150ms">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
               Integrantes
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon className="h-5 w-5 flex-none text-white" aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -143,9 +142,9 @@ export default function Example() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 p-1 rounded hover:bg-[#def5ff] transition background-color ease-in 150ms">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
               Servicios
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon className="h-5 w-5 flex-none text-white" aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -180,10 +179,10 @@ export default function Example() {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <Link to="/Produccion" className="text-sm font-semibold leading-6 text-gray-900 p-1 rounded hover:bg-[#def5ff] transition background-color ease-in 150ms">
+          <Link to="/Produccion" className="text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
             Producción
           </Link>
-          <Link to="/Contacto" className="text-sm font-semibold leading-6 text-gray-900 p-1 rounded hover:bg-[#def5ff] transition background-color ease-in 150ms">
+          <Link to="/Contacto" className="text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
             Contacto
           </Link>
         </Popover.Group>
