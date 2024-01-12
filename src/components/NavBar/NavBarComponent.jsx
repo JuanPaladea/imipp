@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   AcademicCapIcon,
@@ -37,19 +37,37 @@ function classNames(...classes) {
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // Check if the scroll position is greater than or equal to 100vh
+      setScrolled(scrollPosition >= window.innerHeight);
+    };
+
+    // Attach the event listener to the scroll event
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+  
 
   return (
-    <header className="bg-opacity-100 fixed top-0 w-full mx-auto">
+    <header className={`bg-white fixed top-0 w-full mx-auto transition opacity linear 300ms z-20 ${scrolled ? 'bg-opacity-100 border-b border-gray-300' : 'bg-opacity-0'}`}>
       <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">IMIPP</span>
             <img
-              className="h-14 w-auto"
-              src="https://i.imgur.com/A9MMdUX.png"
+              className="h-14 w-auto transition all ease-in 150ms"
+              src={`${scrolled ? 'https://i.imgur.com/A9MMdUX.png' : 'https://i.imgur.com/z07pPGJ.png'}`}
               alt="IMIPP" 
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -62,13 +80,13 @@ export default function Example() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/" className="text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
+          <Link to="/" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
             Inicio
           </Link>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
+            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
               Grupos de Investigación
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-gray-900' : 'text-white'}`} aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -88,7 +106,7 @@ export default function Example() {
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 text-white group-hover:text-[#009cde]" aria-hidden="true" />
+                        <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
                       </div>
                       <div className="flex-auto">
                         <a href={item.href} className="block font-semibold text-gray-900">
@@ -104,7 +122,7 @@ export default function Example() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
+            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
               Integrantes
               <ChevronDownIcon className="h-5 w-5 flex-none text-white" aria-hidden="true" />
             </Popover.Button>
@@ -142,7 +160,7 @@ export default function Example() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
+            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
               Servicios
               <ChevronDownIcon className="h-5 w-5 flex-none text-white" aria-hidden="true" />
             </Popover.Button>
@@ -179,10 +197,10 @@ export default function Example() {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <Link to="/Produccion" className="text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
+          <Link to="/Produccion" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
             Producción
           </Link>
-          <Link to="/Contacto" className="text-sm font-semibold leading-6 text-white p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms">
+          <Link to="/Contacto" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
             Contacto
           </Link>
         </Popover.Group>
