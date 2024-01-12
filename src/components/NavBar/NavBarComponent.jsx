@@ -9,7 +9,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const integrantes = [
   { name: 'Investigadores', description: 'Conoce a los investigadores que conforman el IMIPP', href: '#', icon: UsersIcon },
@@ -35,36 +35,33 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export default function NavBarComponent({location}) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollBorder, setScrollBorder] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(window.scrollY);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      // Check if the scroll position is greater than or equal to 100vh
-      setScrolled(scrollPosition >= window.innerHeight);
-    };
+      setScrollPosition(window.scrollY)
+    }
+    
+    const isOnHomePage = location.pathname === '/';
+    const isScrolled = isOnHomePage && scrollPosition < window.innerHeight * 0.70;
+    setScrolled(isScrolled);
 
-    // Attach the event listener to the scroll event
     window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once on mount
-  
+  }, [location.pathname, scrollPosition]);
 
   return (
-    <header className={`bg-white fixed top-0 w-full mx-auto transition opacity linear 300ms z-20 ${scrolled ? 'bg-opacity-100 border-b border-gray-300' : 'bg-opacity-0'}`}>
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className={`${scrolled ? 'bg-transparent' : 'bg-white'} fixed mx-auto top-0 w-full transition duration-500 z-20`}>
+      <nav className={`flex items-center justify-between p-6 lg:px-8 max-w-7xl mx-auto`} aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">IMIPP</span>
             <img
               className="h-14 w-auto transition all ease-in 150ms"
-              src={`${scrolled ? 'https://i.imgur.com/A9MMdUX.png' : 'https://i.imgur.com/z07pPGJ.png'}`}
+              src={`${scrolled ? 'https://i.imgur.com/z07pPGJ.png' : 'https://i.imgur.com/A9MMdUX.png'}`}
               alt="IMIPP" 
             />
           </Link>
@@ -76,17 +73,17 @@ export default function Example() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6 text-white" aria-hidden="true" />
+            <Bars3Icon className={`h-6 w-6 ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+          <Link to="/" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             Inicio
           </Link>
           <Popover className="relative">
-            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
               Grupos de Investigación
-              <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-gray-900' : 'text-white'}`} aria-hidden="true" />
+              <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -122,9 +119,9 @@ export default function Example() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
               Integrantes
-              <ChevronDownIcon className="h-5 w-5 flex-none text-white" aria-hidden="true" />
+              <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -160,9 +157,9 @@ export default function Example() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
               Servicios
-              <ChevronDownIcon className="h-5 w-5 flex-none text-white" aria-hidden="true" />
+              <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -197,10 +194,10 @@ export default function Example() {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <Link to="/Produccion" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+          <Link to="/Produccion" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             Producción
           </Link>
-          <Link to="/Contacto" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+          <Link to="/Contacto" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             Contacto
           </Link>
         </Popover.Group>

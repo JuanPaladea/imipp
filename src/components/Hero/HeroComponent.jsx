@@ -1,17 +1,47 @@
+import { AcademicCapIcon, BeakerIcon, UsersIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
 const HeroComponent = () => {
   return (
-    <section class="text-gray-600 body-font bg-white">
-      {/* <div class="container max-w-7xl mx-auto flex px-4 xl:px-0 py-24 md:flex-row flex-col-reverse items-center">
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <img class="object-cover object-center rounded" alt="hero" src="https://i.imgur.com/yAVldxg.jpg"/>
+    <section class="text-gray-600 body-font max-w-7xl mx-auto">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 content-start sm:pr-10">
+          <div class="w-full sm:p-4 px-4 mb-6">
+            <h1 class="title-font font-bold text-2xl mb-2 text-gray-900">El IMIPP</h1>
+            <div class="leading-relaxed">El Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas (IMIPP) es una Unidad Ejecutora del Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET) y el Ministerio de Salud del Gobierno de la Ciudad de Buenos Aires. Ubicado en el Hospital de Niños "Dr. Ricardo Gutierrez".</div>
+          </div>
+          <div class="p-4 flex">
+            <div className='my-auto mx-2'>
+              <UsersIcon className='h-7 w-7'/>
+            </div>
+            <div>
+              <h2 class="title-font font-medium text-3xl text-gray-900">12</h2>
+              <p class="leading-relaxed">Investigadores</p>
+            </div>
+          </div>
+          <div class="p-4 flex">
+            <div className='my-auto mx-2'>
+              <AcademicCapIcon className='h-7 w-7'/>
+            </div>
+            <div>
+              <h2 class="title-font font-medium text-3xl text-gray-900">14</h2>
+              <p class="leading-relaxed">Becarios</p>
+            </div>
+          </div>
+          <div class="p-4 flex">
+            <div className='my-auto mx-2'>
+              <BeakerIcon className='h-7 w-7'/>
+            </div>
+            <div>
+              <h2 class="title-font font-medium text-3xl text-gray-900">2</h2>
+              <p class="leading-relaxed">Técnicos</p>
+            </div>
+          </div>
         </div>
-        <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-          <h2 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">El IMIPP</h2>
-          <p class="mb-8 leading-relaxed text-gray-900 text-justify">El Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas (IMIPP) es una Unidad Ejecutora del Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET) ubicado en el Hospital de Niños "Dr. Ricardo Gutiérrez" (HNRG) en la Ciudad de Buenos Aires, el IMIPP opera en conjunto con la División Patología, el Laboratorio de Parasitología y Chagas y el Servicio de Inmunología.</p>
+        <div class="lg:w-1/2 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
+          <img class="object-cover object-center w-full h-full" src="https://i.imgur.com/WReS5he.jpg" alt="stats"/>
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }

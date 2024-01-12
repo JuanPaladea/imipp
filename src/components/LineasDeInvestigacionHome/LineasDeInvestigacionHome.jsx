@@ -10,7 +10,7 @@ const LineasDeInvestigacionHome = () => {
             <div class="w-24 h-full bg-[#009cde]"></div>
           </div>
           <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-            <h1 class="sm:w-2/5 text-gray-900 text-4xl font-bold mb-2 sm:mb-0">Líneas de Investigación</h1>
+            <h1 class="sm:w-2/5 text-gray-900 text-2xl font-bold mb-2 sm:mb-0">Líneas de Investigación</h1>
             <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Conoce la líneas de investigación que se desarrollan en el IMIPP</p>
           </div>
         </div>
