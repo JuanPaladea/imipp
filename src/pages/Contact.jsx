@@ -3,7 +3,7 @@ import ContactComponent from '../components/Contact/ContactComponent'
 
 const Contact = () => {
   return (
-    <div className='mt-24'>
+    <div className='mt-12'>
       <ContactComponent/>
     </div>
   )

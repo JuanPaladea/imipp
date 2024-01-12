@@ -29,8 +29,17 @@ const ContactComponent = () => {
             <rect width="100%" height="100%" strokeWidth={0} fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
           </svg>
         </div>
-      <section class="text-gray-600 body-font relative max-w-7xl mx-auto">
-        <div class="container py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      <section class="text-gray-600 body-font relative max-w-7xl mx-auto py-24 px-5 lg:px-0">
+        <div class="flex flex-col py-4 ">
+          <div class="h-1 bg-gray-200 rounded overflow-hidden">
+            <div class="w-24 h-full bg-[#009cde]"></div>
+          </div>
+          <div class="flex flex-wrap sm:flex-row flex-col py-6">
+            <h1 class="sm:w-2/5 text-gray-900 text-2xl font-bold mb-2 sm:mb-0">Contacto</h1>
+            <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Ponte en contacto con nosotros</p>
+          </div>
+        </div>
+        <div class="container mx-auto flex sm:flex-nowrap flex-wrap">
           <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13137.498908478254!2d-58.4122362!3d-34.5946847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb461565531d%3A0x30532fa7a7c8a200!2sIMIPP%20-%20CONICET!5e0!3m2!1sen!2sar!4v1704999202900!5m2!1sen!2sar" style={{filter: 'opacity(0.8)'}}></iframe>
             <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">

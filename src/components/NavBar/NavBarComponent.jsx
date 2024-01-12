@@ -48,13 +48,14 @@ export default function NavBarComponent({location}) {
     
     const isOnHomePage = location.pathname === '/';
     const isScrolled = isOnHomePage && scrollPosition < window.innerHeight * 0.70;
+    const isScrollBorder = isOnHomePage && scrollPosition < window.innerHeight *0.95;
     setScrolled(isScrolled);
-
+    setScrollBorder(isScrollBorder)
     window.addEventListener('scroll', handleScroll);
   }, [location.pathname, scrollPosition]);
 
   return (
-    <header className={`${scrolled ? 'bg-transparent' : 'bg-white'} fixed mx-auto top-0 w-full transition duration-500 z-20`}>
+    <header className={`${scrolled ? 'bg-transparent' : 'bg-white'} ${scrollBorder ? '' : 'border-b border-gray-200'} fixed mx-auto top-0 w-full transition duration-500 z-20`}>
       <nav className={`flex items-center justify-between p-6 lg:px-8 max-w-7xl mx-auto`} aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
@@ -204,7 +205,7 @@ export default function NavBarComponent({location}) {
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">IMIPP</span>
