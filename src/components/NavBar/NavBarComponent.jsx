@@ -12,23 +12,23 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Link, useLocation } from 'react-router-dom'
 
 const integrantes = [
-  { name: 'Investigadores', description: 'Conoce a los investigadores que conforman el IMIPP', href: '#', icon: UsersIcon },
-  { name: 'Becarios', description: 'Conoce a los becarios desarrollando su tesis doctoral o trabajo pos-doctoral en el IMIPP', href: '#', icon: AcademicCapIcon },
-  { name: 'Personal de Apoyo', description: 'Conoce a los integrantes de la Carrera del Personal de Apoyo que desempeñan su trabajo en el IMIPP', href: '#', icon: BeakerIcon },
+  { name: 'Investigadores', description: 'Conoce a los investigadores que conforman el IMIPP', href: '/Investigadores', icon: UsersIcon },
+  { name: 'Becarios', description: 'Conoce a los becarios desarrollando su tesis doctoral o trabajo pos-doctoral en el IMIPP', href: '/Becarios', icon: AcademicCapIcon },
+  { name: 'Personal de Apoyo', description: 'Conoce a los integrantes de la Carrera del Personal de Apoyo que desempeñan su trabajo en el IMIPP', href: '/CPA', icon: BeakerIcon },
 ]
 
 const gruposDeInvestigacion = [
-  { name: 'Chagas', description: 'Conoce al grupo enfocado en el estudio de Parasitología y Chagas del IMIPP', href: '#', icon: ChevronDoubleRightIcon },
-  { name: 'Virus de Epstein-Barr', description: 'Conoce al grupo enfocado en el estudio del Virus de Epstein-Barr (EBV)', href: '#', icon: ChevronDoubleRightIcon },
-  { name: 'Patologías Hepáticas', description: 'Conoce al grupo enfocado en el estudio de la Hepatitis B, Hepatitis C y Hepatitis Autoinmune', href: '#', icon: ChevronDoubleRightIcon },
-  { name: 'Biomarcadores en Tumores Sólidos', description: 'Conoce al grupo enfocado en el estudio de biomarcadores en patologías pediátricas', href: '#', icon: ChevronDoubleRightIcon },
+  { name: 'Chagas', description: 'Conoce al grupo enfocado en el estudio de Parasitología y Chagas del IMIPP', href: '/Chagas', icon: ChevronDoubleRightIcon },
+  { name: 'Virus de Epstein-Barr', description: 'Conoce al grupo enfocado en el estudio del Virus de Epstein-Barr (EBV)', href: '/EBV', icon: ChevronDoubleRightIcon },
+  { name: 'Patologías Hepáticas', description: 'Conoce al grupo enfocado en el estudio de la Hepatitis B, Hepatitis C y Hepatitis Autoinmune', href: 'Hepatitis', icon: ChevronDoubleRightIcon },
+  { name: 'Biomarcadores en Tumores Sólidos', description: 'Conoce al grupo enfocado en el estudio de biomarcadores en patologías pediátricas', href: '/Tumores-Solidos', icon: ChevronDoubleRightIcon },
 ]
 
 const servicios = [
-  { name: 'Hibridación In Situ', description: 'Analisis de traslocaciones en tumores y deteccion de virus es muestras fiajdas en formol e incluidas en parafina', href: '#', icon: ChevronDoubleRightIcon },
-  { name: 'Secuenciación de amplicones por metodología Sanger', description: 'Secuenciación de amplicones por metodología Sanger usando un secuenciador ABI3500 (Life Technologies)', href: '#', icon: ChevronDoubleRightIcon },
-  { name: 'Inmunohistoquímica', description: 'Inmunohistoquímica para expresión de antígenos en biopsias fijadas en formol e incluidas en parafina, con anticuerpos primarios específicos, en sistema automatizado', href: '#', icon: ChevronDoubleRightIcon },
-  { name: 'Curso de Biología Molecular para patólogos', description: 'Curso de Biología Molecular para patólogos', href: '#', icon: ChevronDoubleRightIcon },
+  { name: 'Hibridación In Situ', description: 'Analisis de traslocaciones en tumores y deteccion de virus es muestras fiajdas en formol e incluidas en parafina', href: '/FISH', icon: ChevronDoubleRightIcon },
+  { name: 'Secuenciación de amplicones por metodología Sanger', description: 'Secuenciación de amplicones por metodología Sanger usando un secuenciador ABI3500 (Life Technologies)', href: '/Secuenciacion', icon: ChevronDoubleRightIcon },
+  { name: 'Inmunohistoquímica', description: 'Inmunohistoquímica para expresión de antígenos en biopsias fijadas en formol e incluidas en parafina, con anticuerpos primarios específicos, en sistema automatizado', href: '/IHQ', icon: ChevronDoubleRightIcon },
+  { name: 'Curso de Biología Molecular para patólogos', description: 'Curso de Biología Molecular para patólogos', href: '/Curso-biologia-molecular', icon: ChevronDoubleRightIcon },
 ]
 
 function classNames(...classes) {
@@ -99,21 +99,18 @@ export default function NavBarComponent({location}) {
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
                   {gruposDeInvestigacion.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
-                      </div>
-                      <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
+                    <Link key={item.name} to={item.href}>
+                      <Popover.Button className="group relative flex items-center text-start gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
+                        </div>
+                        <div className="flex-auto">
+                          <p className='block font-semibold text-gray-900'>{item.name}</p>
+                          <span className="Popolute inset-0" />
+                          <p className="mt-1 text-gray-600">{item.description}</p>
+                        </div>
+                      </Popover.Button>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
@@ -136,22 +133,19 @@ export default function NavBarComponent({location}) {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {integrantes.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-[#009cde]" aria-hidden="true" />
-                      </div>
-                      <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
+                {integrantes.map((item) => (
+                    <Link key={item.name} to={item.href}>
+                      <Popover.Button className="group relative flex items-center text-start gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
+                        </div>
+                        <div className="flex-auto">
+                          <p className='block font-semibold text-gray-900'>{item.name}</p>
+                          <span className="Popolute inset-0" />
+                          <p className="mt-1 text-gray-600">{item.description}</p>
+                        </div>
+                      </Popover.Button>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
@@ -174,22 +168,19 @@ export default function NavBarComponent({location}) {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {servicios.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-[#009cde]" aria-hidden="true" />
-                      </div>
-                      <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
+                {servicios.map((item) => (
+                    <Link key={item.name} to={item.href}>
+                      <Popover.Button className="group relative flex items-center text-start gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
+                        </div>
+                        <div className="flex-auto">
+                          <p className='block font-semibold text-gray-900'>{item.name}</p>
+                          <span className="Popolute inset-0" />
+                          <p className="mt-1 text-gray-600">{item.description}</p>
+                        </div>
+                      </Popover.Button>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
@@ -293,7 +284,7 @@ export default function NavBarComponent({location}) {
                         {servicios.map((item) => (
                           <Disclosure.Button
                             key={item.name}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 text-start hover:bg-[#def5ff] transition background-color ease-in 150ms"
                           >
                             <Link to={item.href}>{item.name}</Link>
                           </Disclosure.Button>

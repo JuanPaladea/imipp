@@ -19,7 +19,7 @@ const HeaderComponent = () => {
         </div>
       </div>
     </header>
-)
+  )
 }
 
 export default HeaderComponent
