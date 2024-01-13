@@ -1,9 +1,14 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const FooterComponent = () => {
   return (
-    <footer class="mx-auto max-w-7xl border-t border-gray-200">
+    <motion.footer 
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    class="mx-auto max-w-7xl border-t border-gray-200 mt-16">
       <div class="container py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -20,16 +25,16 @@ const FooterComponent = () => {
             <h2 class="font-semibold text-gray-900 text-sm mb-3">Grupos de Investigación</h2>
             <nav class="list-none mb-10">
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Chagas</Link>
+                <Link to='/Chagas' class="text-gray-600 hover:text-gray-800">Chagas</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Virus de Epstein-Barr</Link>
+                <Link to="/EBV" class="text-gray-600 hover:text-gray-800">Virus de Epstein-Barr</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Patologías Hepáticas</Link>
+                <Link to="/Hepatitis" class="text-gray-600 hover:text-gray-800">Patologías Hepáticas</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Biomarcadores en Tumores Sólidos</Link>
+                <Link to="/Tumores-Solidos" class="text-gray-600 hover:text-gray-800">Biomarcadores en Tumores Sólidos</Link>
               </li>
             </nav>
           </div>
@@ -37,13 +42,13 @@ const FooterComponent = () => {
             <h2 class="font-semibold text-gray-900 text-sm mb-3">Integrantes</h2>
             <nav class="list-none mb-10">
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Investigadores</Link>
+                <Link to="/Investigadores" class="text-gray-600 hover:text-gray-800">Investigadores</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Becarios</Link>
+                <Link to="/Becarios" class="text-gray-600 hover:text-gray-800">Becarios</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Personal de Apoyo</Link>
+                <Link to="/CPA" class="text-gray-600 hover:text-gray-800">Personal de Apoyo</Link>
               </li>
             </nav>
           </div>
@@ -51,16 +56,16 @@ const FooterComponent = () => {
             <h2 class="font-semibold text-gray-900 text-sm mb-3">Servicios</h2>
             <nav class="list-none mb-10">
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Hibridación in Situ</Link>
+                <Link to="/FISH" class="text-gray-600 hover:text-gray-800">Hibridación in Situ</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Secuenciación Sanger</Link>
+                <Link to="/Secuenciacion" class="text-gray-600 hover:text-gray-800">Secuenciación Sanger</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Inmunohistoquímica</Link>
+                <Link to="/IHQ" class="text-gray-600 hover:text-gray-800">Inmunohistoquímica</Link>
               </li>
               <li>
-                <Link class="text-gray-600 hover:text-gray-800">Curso de Biología Molecular para patólogos</Link>
+                <Link to="/Curso-biologia-molecular" class="text-gray-600 hover:text-gray-800">Curso de Biología Molecular para patólogos</Link>
               </li>
             </nav>
           </div>
@@ -101,7 +106,7 @@ const FooterComponent = () => {
           </span>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 

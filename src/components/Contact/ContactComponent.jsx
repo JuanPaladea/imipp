@@ -1,8 +1,12 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 
 const ContactComponent = () => {
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1 }}>
       <section class="text-gray-600 body-font relative max-w-7xl mx-auto py-24 px-5 lg:px-0">
         <div class="flex flex-col py-4 ">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
@@ -44,11 +48,13 @@ const ContactComponent = () => {
               <label for="message" class="leading-7 text-sm text-gray-600">Mensaje</label>
               <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
             </div>
-            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Contáctanos</button>
+            <motion.button
+            whileTap={{ scale: 0.9 }}
+            class="text-white bg-[#009cde] border-0 py-2 px-6 focus:outline-none hover:bg-opacity-90 rounded text-lg">Contáctanos</motion.button>
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   )
 }
 

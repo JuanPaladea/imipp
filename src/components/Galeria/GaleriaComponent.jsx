@@ -15,7 +15,6 @@ const GaleriaComponent = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        viewport={{ once: true }}
         class="container px-5 lg:px-0 py-24 mx-auto flex flex-wrap">
           <div class="flex flex-wrap md:-m-2 -m-1">
             <div class="flex flex-wrap md:w-1/2">

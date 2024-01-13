@@ -1,11 +1,15 @@
 import React from 'react'
 import ErrorComponent from '../components/Error/ErrorComponent'
+import { motion } from 'framer-motion'
 
 const Error = () => {
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}>
         <ErrorComponent/>
-    </div>
+    </motion.div>
   )
 }
 
