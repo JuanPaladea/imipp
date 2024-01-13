@@ -24,7 +24,9 @@ const LineasDeInvestigacionHome = () => {
             <div class="xl:w-1/4 md:w-1/2 p-4">
               <Link to="/Chagas">
                 <div class="bg-gray-100 rounded-lg">
-                  <img class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/epwMVSd.jpg" alt="content"/>
+                  <motion.img 
+                  whileTap={{ scale: 0.9 }}
+                  class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/epwMVSd.jpg" alt="content"/>
                   <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Enfermedades Infecciosas Ignoradas</h2>
                   <p class="leading-relaxed text-base">Chagas, Toxoplasmosis y Sífilis congénita</p>
                 </div>
@@ -33,7 +35,9 @@ const LineasDeInvestigacionHome = () => {
             <div class="xl:w-1/4 md:w-1/2 p-4">
               <Link to="/EBV">
                 <div class="bg-gray-100 rounded-lg">
-                  <img class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/Uu3TyC4.jpg" alt="content"/>
+                  <motion.img 
+                  whileTap={{ scale: 0.9 }}
+                  class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/Uu3TyC4.jpg" alt="content"/>
                   <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Virus de Epstein-Barr</h2>
                   <p class="leading-relaxed text-base">El Virus de Epstein-Barr (EBV) es un virus de la familia de los herpes que infecta células B en humanos.</p>
                 </div>
@@ -42,7 +46,9 @@ const LineasDeInvestigacionHome = () => {
             <div class="xl:w-1/4 md:w-1/2 p-4">
               <Link to="/Hepatitis">
                 <div class="bg-gray-100 rounded-lg">
-                  <img class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/0rG79xD.jpg" alt="content"/>
+                  <motion.img 
+                  whileTap={{ scale: 0.9 }}
+                  class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/0rG79xD.jpg" alt="content"/>
                   <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Patologías hepáticas: Hepatitis B, Hepatitis C y Hepatitis Autoinmune</h2>
                   <p class="leading-relaxed text-base">Las patologías hepáticas abarcan una amplia gama de trastornos que afectan el hígado.</p>
                 </div>
@@ -51,7 +57,9 @@ const LineasDeInvestigacionHome = () => {
             <div class="xl:w-1/4 md:w-1/2 p-4">
               <Link to="/Tumores-Solidos">
                 <div class="bg-gray-100 rounded-lg">
-                  <img class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/yIPupxT.jpg" alt="content"/>
+                  <motion.img 
+                  whileTap={{ scale: 0.9 }}
+                  class="h-40 rounded w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/yIPupxT.jpg" alt="content"/>
                   <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Biomarcadores en Patologías Pediátricas</h2>
                   <p class="leading-relaxed text-base">Los biomarcadores en tumores sólidos son moléculas o características biológicas que proporcionan información sobre el desarrollo, progresión y respuesta al tratamiento de los cánceres sólidos.</p>
                 </div>

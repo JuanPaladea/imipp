@@ -1,7 +1,17 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const ImagenComponent = ({open, setOpen, imagen}) => {
+  useEffect(() => {
+    // Set inline styles for the body based on the 'open' state
+    document.body.style.overflow = open ? 'hidden' : 'visible';
+
+    // Cleanup function to reset the style when the component unmounts
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [open]);
+  
   return (
     <AnimatePresence>
         {open && (

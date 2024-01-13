@@ -69,7 +69,7 @@ const FooterComponent = () => {
               </li>
             </nav>
           </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4 flex flex-col">
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-3 flex flex-col">
             <Link class="font-semibold text-gray-900 text-sm mb-3">Producción</Link>
             <Link class="font-semibold text-gray-900 text-sm mb-3">Contacto</Link>
           </div>

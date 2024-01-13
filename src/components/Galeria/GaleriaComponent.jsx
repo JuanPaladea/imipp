@@ -18,50 +18,62 @@ const GaleriaComponent = () => {
         class="container px-5 lg:px-0 py-24 mx-auto flex flex-wrap">
           <div class="flex flex-wrap md:-m-2 -m-1">
             <div class="flex flex-wrap md:w-1/2">
-              <div class="md:p-2 p-1 w-1/2">
+              <motion.div 
+              whileTap={{ scale: 0.9 }}
+              class="md:p-2 p-1 w-1/2">
                 <Link>
                   <img alt="gallery" class="w-full object-cover h-full object-center block hover:scale-105 transition-all" src="https://i.imgur.com/aqoaU04.jpg" onClick={() => {
                     setOpen(true)
                     setSelected('https://i.imgur.com/aqoaU04.jpg')}}/>
                 </Link>
-              </div>
-              <div class="md:p-2 p-1 w-1/2">
+              </motion.div>
+              <motion.div 
+              whileTap={{ scale: 0.9 }}
+              class="md:p-2 p-1 w-1/2">
                 <Link>
                   <img alt="gallery" class="w-full object-cover h-full object-center block hover:scale-105 transition-all" src="https://i.imgur.com/VyfwdKv.jpg" onClick={() => {
                     setOpen(true)
                     setSelected('https://i.imgur.com/VyfwdKv.jpg')}}/>
                 </Link>
-              </div>
-              <div class="md:p-2 p-1 w-full">
+              </motion.div>
+              <motion.div 
+              whileTap={{ scale: 0.9 }}
+              class="md:p-2 p-1 w-full">
                 <Link>
                   <img alt="gallery" class="w-full h-full object-cover object-center block hover:scale-105 transition-all" src="https://i.imgur.com/xCFaL8h.jpg" onClick={() => {
                     setOpen(true)
                     setSelected('https://i.imgur.com/xCFaL8h.jpg')}}/>
                 </Link>
-              </div>
+              </motion.div>
             </div>
             <div class="flex flex-wrap md:w-1/2">
-              <div class="md:p-2 p-1 w-full">
+              <motion.div 
+              whileTap={{ scale: 0.9 }}
+              class="md:p-2 p-1 w-full">
                 <Link>
                   <img alt="gallery" class="w-full h-full object-cover object-center block hover:scale-105 transition-all" src="https://i.imgur.com/VtSYwB7.jpg" onClick={() => {
                     setOpen(true)
                     setSelected('https://i.imgur.com/VtSYwB7.jpg')}}/>
                 </Link>
-              </div>
-              <div class="md:p-2 p-1 w-1/2">
+              </motion.div>
+              <motion.div 
+              whileTap={{ scale: 0.9 }}
+              class="md:p-2 p-1 w-1/2">
                 <Link>
                   <img alt="gallery" class="w-full object-cover h-full object-center block hover:scale-105 transition-all" src="https://i.imgur.com/SjjYW6S.jpg" onClick={() => {
                     setOpen(true)
                     setSelected('https://i.imgur.com/SjjYW6S.jpg')}}/>
                 </Link>
-              </div>
-              <div class="md:p-2 p-1 w-1/2">
+              </motion.div>
+              <motion.div 
+              whileTap={{ scale: 0.9 }}
+              class="md:p-2 p-1 w-1/2">
                 <Link>
                   <img alt="gallery" class="w-full object-cover h-full object-center block hover:scale-105 transition-all" src="https://i.imgur.com/2OLDBiE.jpg" onClick={() => {
                     setOpen(true)
                     setSelected('https://i.imgur.com/2OLDBiE.jpg')}}/>
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>

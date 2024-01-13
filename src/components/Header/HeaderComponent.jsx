@@ -6,7 +6,7 @@ const HeaderComponent = () => {
     <header>
       <div className="w-full h-screen bg-center bg-cover mx-auto bg-[url('https://i.imgur.com/VyhtrBj.jpeg')]">
         <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 py-12">
-          <div className="text-center">
+          <div className="text-justify">
             <div className="container px-4 mx-auto">
               <motion.div 
               initial={{ opacity: 0 }}

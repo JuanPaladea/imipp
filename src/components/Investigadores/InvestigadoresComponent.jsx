@@ -44,8 +44,8 @@ const investigadores = [
 const InvestigadoresComponent = () => {
 
   return (
-    <section class="text-gray-600 body-font mt-16">
-      <div class="container px-4 lg:px-0 py-24 mx-auto max-w-7xl mx-auto">
+    <section class="text-gray-600 body-font mt-16 mx-auto max-w-7xl px-4 lg:px-0">
+      <div class="container mx-auto py-24">
         <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

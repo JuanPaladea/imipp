@@ -8,6 +8,7 @@ import Contact from '../pages/Contact'
 import Chagas from '../pages/Chagas'
 import Investigadores from '../pages/Investigadores'
 import { AnimatePresence } from 'framer-motion'
+import FISH from '../pages/FISH'
 
 const MainRouter = () => {
   const location = useLocation();
@@ -30,8 +31,9 @@ const MainRouter = () => {
       <NavBarComponent key='navbar' location={location} />
       <Routes location={location} key={location.pathname}>
           <Route path='/'element={<Home/>}/>
-          <Route path='/Investigadores'element={<Investigadores/>}/>
           <Route path='/Chagas'element={<Chagas/>}/>
+          <Route path='/Investigadores'element={<Investigadores/>}/>
+          <Route path='/FISH' element={<FISH/>} />
           <Route path='/Contacto'element={<Contact/>}/>
           <Route path='*' element={<ErrorComponent/>} />
       </Routes>
