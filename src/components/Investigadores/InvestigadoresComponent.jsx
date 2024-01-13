@@ -6,7 +6,7 @@ const investigadores = [
     id: 0,
     nombre: 'Dra. María Victoria Preciado',
     cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
+    descripcionCorta: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA.',
     descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
     img: 'https://i.imgur.com/i987ymk.png',
     pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'
@@ -15,7 +15,7 @@ const investigadores = [
     id: 0,
     nombre: 'Dra. María Victoria Preciado',
     cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
+    descripcionCorta: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA.',
     descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
     img: 'https://i.imgur.com/i987ymk.png',
     pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'
@@ -24,7 +24,7 @@ const investigadores = [
     id: 0,
     nombre: 'Dra. María Victoria Preciado',
     cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
+    descripcionCorta: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA.',
     descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
     img: 'https://i.imgur.com/i987ymk.png',
     pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'
@@ -33,34 +33,7 @@ const investigadores = [
     id: 0,
     nombre: 'Dra. María Victoria Preciado',
     cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
-    descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
-    img: 'https://i.imgur.com/i987ymk.png',
-    pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'
-  },
-  {
-    id: 0,
-    nombre: 'Dra. María Victoria Preciado',
-    cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
-    descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
-    img: 'https://i.imgur.com/i987ymk.png',
-    pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'
-  },
-  {
-    id: 0,
-    nombre: 'Dra. María Victoria Preciado',
-    cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
-    descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
-    img: 'https://i.imgur.com/i987ymk.png',
-    pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'
-  },
-  {
-    id: 0,
-    nombre: 'Dra. María Victoria Preciado',
-    cargo: 'Investigadora Principal',
-    descripcionCorta: 'Directora del IMIPP',
+    descripcionCorta: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA.',
     descripcion: 'Bioquímica, Facultad de Farmacia y Bioquímica, UBA; Doctora de la Universidad de Buenos Aires. Directora del IMIPP CONICET-GCBA. Las líneas de investigación de mi grupo abordan los mecanismos patogénicos de las infecciones virales crónicas (virus de Epstein Barr, virus de Hepatitis C y de Hepatitis B). En referencia al virus de Epstein Barr investigamos también la variabilidad molecular y evolución del genoma viral en relación al sistema inmune del hospedador. Finalmente, trabajamos en la identificación de biomarcadores en neoplasias pediátricas orientada al desarrollo de una plataforma de diagnóstico molecular de mediana y alta complejidad.',
     img: 'https://i.imgur.com/i987ymk.png',
     pubmed: 'https://pubmed.ncbi.nlm.nih.gov/?term=Preciado+MV&cauthor_id=34820942'

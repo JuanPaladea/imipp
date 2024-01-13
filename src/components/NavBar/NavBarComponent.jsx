@@ -9,7 +9,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const integrantes = [
   { name: 'Investigadores', description: 'Conoce a los investigadores que conforman el IMIPP', href: '/Investigadores', icon: UsersIcon },
@@ -186,9 +186,6 @@ export default function NavBarComponent({location}) {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <Link to="/Produccion" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
-            Producción
-          </Link>
           <Link to="/Contacto" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             Contacto
           </Link>
@@ -293,12 +290,6 @@ export default function NavBarComponent({location}) {
                     </>
                   )}
                 </Disclosure>
-                <Link
-                  to="/Produccion"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
-                >
-                  Producción
-                </Link>
                 <Link
                   to="/Contacto"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
