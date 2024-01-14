@@ -4,7 +4,7 @@ import React from 'react'
 
 const ServicioBody = () => {
   return (
-    <section class="text-gray-600 body-font bg-gray-100 py-24">
+    <section class="text-gray-600 body-font bg-gray-100 py-24 px-4 lg:px-0">
       <div class="max-w-7xl flex flex-wrap mx-auto ">
         <motion.div 
         initial={{ opacity: 0 }}

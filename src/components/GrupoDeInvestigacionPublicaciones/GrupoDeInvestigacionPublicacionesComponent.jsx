@@ -63,9 +63,9 @@ const GrupoDeInvestigacionPublicacionesComponent = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
               key={publicacion.id} class="py-12 flex flex-wrap md:flex-nowrap">
-                <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                  <span class="font-semibold title-font text-gray-700">{publicacion.revista}</span>
-                  <span class="mt-1 text-gray-500 text-sm">{publicacion.fecha}</span>
+                <div class="md:w-256 pr-2 md:mb-0 mb-6 flex flex-col">
+                  <p class="font-semibold text-gray-700">{publicacion.revista}</p>
+                  <p class="mt-1 text-gray-500 text-sm">{publicacion.fecha}</p>
                 </div>
                 <div class="md:flex-grow">
                   <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{publicacion.titulo}</h2>
