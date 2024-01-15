@@ -1,22 +1,34 @@
 import React from 'react'
 import GrupoDeInvestigacionHeader from '../components/GrupoDeInvestigacionHeader/GrupoDeInvestigacionHeader'
 import GrupoDeInvestigacionPublicacionesComponent from '../components/GrupoDeInvestigacionPublicaciones/GrupoDeInvestigacionPublicacionesComponent'
-import InvestigadoresComponent from '../components/Investigadores/InvestigadoresComponent'
 import ContactComponent from '../components/Contact/ContactComponent'
 import { motion } from 'framer-motion'
+import IntegrantesComponent from '../components/Integrantes/IntegrantesComponent'
+import { useCollection, useUnico } from '../hooks/useCollection'
+import LoaderComponent from '../components/Loader/LoaderComponent'
 
 const Chagas = () => {
+  const {resultado, loading} = useUnico('LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas', 'G1bgOIvmarjRI08JmLPD')
+  const {resultados: integrantes, loading: loadingIntegrantes} = useCollection('LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas/G1bgOIvmarjRI08JmLPD/Integrantes')
+  const {resultados: publicaciones, loading: loadingPublicaciones} = useCollection('LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas/G1bgOIvmarjRI08JmLPD/Publicaciones')
+
+  if (loading && loadingIntegrantes && loadingPublicaciones) {
+    return <div className='flex align-center justify-center h-full w-full mt-40'><LoaderComponent/></div>
+  }
+
   return (
+    resultado &&
     <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
-        <GrupoDeInvestigacionHeader 
-          imagen='https://i.imgur.com/FoJY1HY.jpg' 
-          titulo='Grupo de Parasitología y Chagas' 
-          descripcion='La enfermedad de Chagas es una infección parasitaria causada por el protozoo Trypanosoma cruzi. Se transmite principalmente por picaduras de triatoma, también llamada "vinchuca." Puede causar síntomas leves en la fase aguda y dañar el corazón y el sistema digestivo en la fase crónica. Es endémica en América Latina y se previene evitando la exposición a los vectores y detectándola temprano.' />
-        <GrupoDeInvestigacionPublicacionesComponent/>
-        <InvestigadoresComponent/>
+        <GrupoDeInvestigacionHeader lineaInvestigacion={resultado} />
+        <GrupoDeInvestigacionPublicacionesComponent 
+          publicaciones={publicaciones}
+          titulo='Conoce las publicaciones del grupo de Parasitología y Chagas del IMIPP' />
+        <IntegrantesComponent 
+          integrantes={integrantes}
+          titulo="Conoce a los integrantes que conforman el grupo de Parasitología y Chagas del IMIPP"/>
         <ContactComponent />
     </motion.div>
   )

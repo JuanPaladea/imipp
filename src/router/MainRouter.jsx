@@ -9,6 +9,7 @@ import Chagas from '../pages/Chagas'
 import Investigadores from '../pages/Investigadores'
 import { AnimatePresence } from 'framer-motion'
 import FISH from '../pages/FISH'
+import Loader from '../pages/Loader'
 
 const MainRouter = () => {
   const location = useLocation();
@@ -35,6 +36,7 @@ const MainRouter = () => {
           <Route path='/Investigadores'element={<Investigadores/>}/>
           <Route path='/FISH' element={<FISH/>} />
           <Route path='/Contacto'element={<Contact/>}/>
+          <Route path='/Loader'element={<Loader/>}/>
           <Route path='*' element={<ErrorComponent/>} />
       </Routes>
       <FooterComponent key='footer'/>
