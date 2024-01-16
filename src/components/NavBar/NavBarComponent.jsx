@@ -22,6 +22,7 @@ const gruposDeInvestigacion = [
   { name: 'Virus de Epstein-Barr', description: 'Conoce al grupo enfocado en el estudio del Virus de Epstein-Barr (EBV)', href: '/EBV', icon: ChevronDoubleRightIcon },
   { name: 'Patologías Hepáticas', description: 'Conoce al grupo enfocado en el estudio de la Hepatitis B, Hepatitis C y Hepatitis Autoinmune', href: 'Hepatitis', icon: ChevronDoubleRightIcon },
   { name: 'Biomarcadores en Tumores Sólidos', description: 'Conoce al grupo enfocado en el estudio de biomarcadores en patologías pediátricas', href: '/Tumores-Solidos', icon: ChevronDoubleRightIcon },
+  { name: 'Sífilis', description: 'Conoce al grupo enfocado en el estudio de sífilis congénita', href: '/Sifilis', icon: ChevronDoubleRightIcon },
 ]
 
 const servicios = [
@@ -56,12 +57,12 @@ export default function NavBarComponent({location}) {
 
   return (
     <header className={`${scrolled ? 'bg-transparent' : 'bg-white'} ${scrollBorder ? '' : 'border-b border-gray-200'} fixed mx-auto top-0 w-full transition duration-500 z-20`}>
-      <nav className={`flex items-center justify-between p-6 lg:px-8 max-w-7xl mx-auto`} aria-label="Global">
+      <nav className={`flex items-center justify-between py-2 p-5 max-w-7xl mx-auto`} aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">IMIPP</span>
             <img
-              className="h-14 w-auto transition all ease-in 150ms"
+              className="h-14 w-auto"
               src={`${scrolled ? 'https://i.imgur.com/z07pPGJ.png' : 'https://i.imgur.com/A9MMdUX.png'}`}
               alt="IMIPP" 
             />
@@ -169,8 +170,8 @@ export default function NavBarComponent({location}) {
               <Popover.Panel className="absolute -left-60 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
                 {servicios.map((item) => (
-                    <Link key={item.name} to={item.href}>
-                      <Popover.Button className="group relative flex items-center text-start gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                    <Link to={item.href}>
+                      <Popover.Button key={item.name} className="group relative flex items-center text-start gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms">
                         <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                           <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
                         </div>
@@ -193,9 +194,9 @@ export default function NavBarComponent({location}) {
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-30 w-full overflow-y-auto bg-white p-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="-m-1.5 p-1.5">
               <span className="sr-only">IMIPP</span>
               <img
               className="h-14 w-auto"
@@ -216,6 +217,7 @@ export default function NavBarComponent({location}) {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   to="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                 >
@@ -233,12 +235,13 @@ export default function NavBarComponent({location}) {
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {gruposDeInvestigacion.map((item) => (
-                          <Disclosure.Button
-                            key={item.name}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
-                          >
-                            <Link to={item.href}>{item.name}</Link>
-                          </Disclosure.Button>
+                          <Link key={item.name} to={item.href} onClick={() => setMobileMenuOpen(false)}>
+                            <Disclosure.Button
+                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
+                            >
+                                {item.name}
+                            </Disclosure.Button>
+                          </Link>
                         ))}
                       </Disclosure.Panel>
                     </>
@@ -260,7 +263,7 @@ export default function NavBarComponent({location}) {
                             key={item.name}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                           >
-                            <Link to={item.href}>{item.name}</Link>
+                            <Link to={item.href} onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
@@ -283,7 +286,7 @@ export default function NavBarComponent({location}) {
                             key={item.name}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 text-start hover:bg-[#def5ff] transition background-color ease-in 150ms"
                           >
-                            <Link to={item.href}>{item.name}</Link>
+                            <Link to={item.href} onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
@@ -292,6 +295,7 @@ export default function NavBarComponent({location}) {
                 </Disclosure>
                 <Link
                   to="/Contacto"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                 >
                   Contacto

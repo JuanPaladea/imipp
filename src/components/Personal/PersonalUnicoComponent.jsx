@@ -45,10 +45,10 @@ const PersonalUnicoComponent = ({open, setOpen, personal}) => {
                         {<img src={personal.imagen} alt={personal.nombre} className="object-cover object-center h-56" />}
                       </div>
                       <div className="sm:col-span-8 lg:col-span-7">
-                      <h2 class="title-font font-medium text-lg text-gray-900">{personal.nombre} </h2>
-                      <h3 class="text-gray-500 mb-3">{personal.cargo} </h3>
-                      <p class="mb-4 text-gray-700">{personal.descripcionLarga} </p>
-                      <span class="inline-flex">
+                      <h2 class="text-xl font-bold tracking-tight text-gray-900">{personal.nombre} </h2>
+                      <h3 class="text-gray-500">{personal.cargo} </h3>
+                      <p class="mt-3 mb-4 font-light text-gray-700">{personal.descripcionLarga} </p>
+                      <span class="flex- space-x-4 sm:mt-0">
                         <Link target='_blank' to={personal.link}>
                           <img width="32" alt="US-NLM-PubMed-Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/32px-US-NLM-PubMed-Logo.svg.png"/>
                         </Link>

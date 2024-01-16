@@ -8,8 +8,8 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
   const [selectedPersonal, setSelectedPersonal] = useState(null);
   const [open, setOpen] = useState(false)
 
-  const handleClick = (investigador) => {
-    setSelectedPersonal(investigador)
+  const handleClick = (persona) => {
+    setSelectedPersonal(persona)
     setOpen(true)
   }
 
@@ -28,32 +28,32 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
             <div class="w-24 h-full bg-[#009cde]"></div>
           </div>
           <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-            <h1 class="sm:w-2/5 text-gray-900 text-2xl font-bold mb-2 sm:mb-0">{titulo}</h1>
+            <h1 class="sm:w-2/5 text-gray-900 text-3xl tracking-tight font-extrabold mb-2 sm:mb-0">{titulo}</h1>
             <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">{descripcion}</p>
           </div>
         </motion.div>
-        <div class="flex flex-wrap -m-4">
-          {personal.map((investigador) => {
+        <div class="grid gap-8 mb-6 lg:mb-16 lg:grid-cols-2">
+          {personal.map((persona) => {
             return (
             <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            key={investigador.nombre} class="p-4 lg:w-1/2">
-              <div 
-              onClick={() => handleClick(investigador)}
-              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left hover:cursor-pointer">
-                <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={investigador.imagen}/>
-                <div class="flex-grow sm:pl-8">
-                  <h2 class="title-font font-medium text-lg text-gray-900">{investigador.nombre} </h2>
-                  <h3 class="text-gray-500 mb-3">{investigador.cargo} </h3>
-                  <p class="mb-4">{investigador.descripcionCorta} </p>
-                  <span class="inline-flex">
-                    <Link target='_blank' to={investigador.link}>
-                      <img width="32" alt="US-NLM-PubMed-Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/32px-US-NLM-PubMed-Logo.svg.png"/>
-                    </Link>
-                  </span>
-                </div>
+            initial={{ opacity: 0, transition: {duration: 1} }}
+            whileInView={{ opacity: 1, transition: {duration: 1} }}
+            whileHover={{ scale: 1.02, transition: {duration: 0.1}}}
+            whileTap={{ scale: 0.95}}
+            key={persona.nombre} 
+            class="items-center bg-gray-50 rounded-lg shadow sm:flex hover:cursor-pointer"
+            onClick={() => handleClick(persona)}
+            >
+              <img alt={persona.nombre} class="md:h-48 md:w-48 h-72 w-72 rounded-lg sm:rounded-none sm:rounded-l-lg mx-auto my-auto" src={persona.imagen}/>
+              <div class="p-5">
+                <h2 class="text-xl font-bold tracking-tight text-gray-900">{persona.nombre} </h2>
+                <h3 class="text-gray-500">{persona.cargo} </h3>
+                <p class="mt-3 mb-4 font-light text-gray-500">{persona.descripcionCorta} </p>
+                <span class="flex- space-x-4 sm:mt-0">
+                  <Link target='_blank' to={persona.link}>
+                    <img width="32" alt="US-NLM-PubMed-Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/32px-US-NLM-PubMed-Logo.svg.png"/>
+                  </Link>
+                </span>
               </div>
             </motion.div>
           )})}

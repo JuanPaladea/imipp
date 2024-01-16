@@ -10,6 +10,10 @@ import Investigadores from '../pages/Investigadores'
 import { AnimatePresence } from 'framer-motion'
 import FISH from '../pages/FISH'
 import Loader from '../pages/Loader'
+import EBV from '../pages/EBV'
+import Hepatitis from '../pages/Hepatitis'
+import TumoresSolidos from '../pages/TumoresSolidos'
+import Sifilis from '../pages/Sifilis'
 
 const MainRouter = () => {
   const location = useLocation();
@@ -33,6 +37,10 @@ const MainRouter = () => {
       <Routes location={location} key={location.pathname}>
           <Route path='/'element={<Home/>}/>
           <Route path='/Chagas'element={<Chagas/>}/>
+          <Route path='/EBV'element={<EBV/>}/>
+          <Route path='/Hepatitis'element={<Hepatitis/>}/>
+          <Route path='/Sifilis'element={<Sifilis/>}/>
+          <Route path='/Tumores-Solidos'element={<TumoresSolidos/>}/>
           <Route path='/Investigadores'element={<Investigadores/>}/>
           <Route path='/FISH' element={<FISH/>} />
           <Route path='/Contacto'element={<Contact/>}/>

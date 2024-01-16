@@ -7,6 +7,7 @@ import GaleriaComponent from '../components/Galeria/GaleriaComponent';
 import ServiciosComponent from '../components/Servicios/ServiciosComponent';
 import ObjetivosComponent from '../components/Objetivos/ObjetivosComponent';
 import { motion } from 'framer-motion';
+import SeminariosComponent from '../components/Seminarios/SeminariosComponent';
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
       <LineasDeInvestigacionHome />
       <GaleriaComponent/>
       <ServiciosComponent/>
+      <SeminariosComponent/>
       <ContactComponent />
     </motion.div>
   );

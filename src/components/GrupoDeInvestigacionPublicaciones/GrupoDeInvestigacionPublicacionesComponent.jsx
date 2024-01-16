@@ -15,7 +15,7 @@ const GrupoDeInvestigacionPublicacionesComponent = ({publicaciones, titulo}) => 
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
           class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-            <h1 class="sm:w-2/5 text-gray-900 text-2xl font-bold mb-2 sm:mb-0">Publicaciones</h1>
+            <h1 class="sm:w-2/5 text-gray-900 text-3xl tracking-tight font-extrabold mb-2 sm:mb-0">Publicaciones</h1>
             <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">{titulo}</p>
           </motion.div>
         </div>
@@ -28,11 +28,11 @@ const GrupoDeInvestigacionPublicacionesComponent = ({publicaciones, titulo}) => 
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
               key={publicacion.titulo} class="py-12 flex flex-wrap md:flex-nowrap">
-                <div class="md:w-256 pr-2 md:mb-0 mb-6 flex flex-col">
+                <div class="pr-4 md:mb-0 mb-6 flex flex-col md:w-1/5">
                   <p class="font-semibold text-gray-700">{publicacion.revista}</p>
                   <p class="mt-1 text-gray-500 text-sm">{publicacion.fecha}</p>
                 </div>
-                <div class="md:flex-grow">
+                <div class="md:flex-grow md:w-5/6">
                   <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{publicacion.titulo}</h2>
                   <p class="leading-relaxed">{publicacion.autores}</p>
                   <Link to={publicacion.link} target='_blank' class="text-indigo-500 inline-flex items-center mt-4">Ver mas

@@ -10,16 +10,16 @@ const FooterComponent = () => {
     transition={{ duration: 1 }}
     class="mx-auto max-w-7xl border-t border-gray-200 mt-16">
       <div class="container py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-        <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <Link to="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <div class="w-64 flex-shrink-0 md:mx-0 text-center md:mt-0 mt-10">
             <img
-              className="h-14 w-auto"
+              className="h-14 w-auto text-center mx-auto"
               src="https://i.imgur.com/A9MMdUX.png"
               alt="IMIPP" 
             />
-          </a>
-          <p class="mt-2 text-sm text-gray-500">Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas</p>
-        </div>
+            <p class="mt-2 text-sm text-gray-500 sm:text-center">Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas</p>
+          </div>
+        </Link>
         <div class="flex-grow flex flex-wrap -mb-10 md:text-left text-center order-first">
           <div class="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 class="font-semibold text-gray-900 text-sm mb-3">Grupos de Investigación</h2>
@@ -70,8 +70,7 @@ const FooterComponent = () => {
             </nav>
           </div>
           <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-3 flex flex-col">
-            <Link class="font-semibold text-gray-900 text-sm mb-3">Producción</Link>
-            <Link class="font-semibold text-gray-900 text-sm mb-3">Contacto</Link>
+            <Link to="/Contacto" class="font-semibold text-gray-900 text-sm mb-3">Contacto</Link>
           </div>
         </div>
       </div>

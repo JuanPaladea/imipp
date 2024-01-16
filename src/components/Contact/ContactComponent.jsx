@@ -8,13 +8,13 @@ const ContactComponent = () => {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
     className='max-w-7xl mx-auto'>
-      <section class="container mx-auto text-gray-600 body-font relative py-24 px-5">
+      <section class="container mx-auto text-gray-600 body-font relative py-12 px-5">
         <div class="flex flex-col py-4">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
             <div class="w-24 h-full bg-[#009cde]"></div>
           </div>
           <div class="flex flex-wrap sm:flex-row flex-col py-6">
-            <h1 class="sm:w-2/5 text-gray-900 text-2xl font-bold mb-2 sm:mb-0">Contacto</h1>
+            <h1 class="sm:w-2/5 text-gray-900 text-3xl tracking-tight font-extrabold mb-2 sm:mb-0">Contacto</h1>
             <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Ponte en contacto con nosotros</p>
           </div>
         </div>

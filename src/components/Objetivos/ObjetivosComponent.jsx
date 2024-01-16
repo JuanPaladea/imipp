@@ -1,45 +1,41 @@
-import { DocumentIcon, LightBulbIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, DocumentIcon, LightBulbIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import React from 'react'
 
 const ObjetivosComponent = () => {
   return (
-    <section class="text-gray-600 body-font">
+    <section class="text-gray-900 text-justify body-font">
       <div class="container px-5 pt-12 pb-24 mx-auto max-w-7xl bg-white">
         <motion.div               
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        class="flex items-center mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-          <div class="sm:w-32 sm:h-32 h-24 w-24 sm:mr-10 inline-flex items-center justify-center rounded-full bg-gray-50 text-[#009cde] p-2 flex-shrink-0">
-            <LightBulbIcon/>
-          </div>
-          <div class="flex-grow text-left mt-6 sm:mt-0">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Misión</h2>
-            <ul>
-              <li class="leading-relaxed text-base mb-2 text-justify">Promover el avance del conocimiento científico para mejorar la salud humana con especial énfasis en pediatría.</li>
-              <li class="leading-relaxed text-base mb-2 text-justify">Desarrollar investigación científica y técnica de excelencia en el área de la biomedicina con particular interés en los campos de virología, parasitología, patología e inmunología.</li>
-              <li class="leading-relaxed text-base mb-2 text-justify">Contribuir a la formación integral de investigadores, técnicos y profesionales del área biomédica.</li>
-              <li class="leading-relaxed text-base mb-2 text-justify">Trasladar los conocimientos y procesos así generados para fortalecer la vinculación del sistema científico-tecnológico con el sistema clínico-asistencial.</li>
-            </ul>
-          </div>
-        </motion.div>
-        <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        class="flex items-center mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col-reverse">
-          <div class="flex-grow text-left mt-6 sm:mt-0">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Objetivos</h2>
-            <ul>
-              <li class="leading-relaxed text-base mb-2 text-justify">Integrar y articular a los grupos de investigación que lo conforman.</li>
-              <li class="leading-relaxed text-base mb-2 text-justify">Elaborar planes de investigación básica y clínica con aplicación sobre el diagnóstico y tratamiento focalizados</li>
-              <li class="leading-relaxed text-base mb-2 text-justify">Proveer al Hospital de Niños Dr. Ricardo Gutierrez y la comunidad servicios diagnósticos y de asistencia científica y técnica de alta complejidad directamente derivados de los desarrollos de sus grupos de investigación.</li>
-              <li class="leading-relaxed text-base mb-2 text-justify">Difundir los resultados de su actividad organizando seminarios y cursos especiales de actualización y estableciendo relaciones de colaboración con similares organismos de investigación del país y el extranjero.</li>
-            </ul>
-          </div>
-          <div class="sm:w-32 sm:h-32 h-24 w-24 sm:mr-10 inline-flex items-center justify-center rounded-full bg-gray-50 text-[#009cde] sm:ml-10 p-4 my-6 flex-shrink-0">
-            <DocumentIcon/>
+        class="flex items-center mx-auto sm:flex-row flex-col">
+          <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div className='sm:pl-8 sm:py-8 sm:my-auto sm:border-l border-gray-200 sm:border-t-0 border-t my-4 pt-4'>
+                <h3 class="mb-2 text-xl font-bold ">Promover</h3>
+                <p class="text-gray-500">el avance del conocimiento científico para mejorar la salud humana con especial énfasis en pediatría.</p>
+            </div>
+            <div className='sm:pl-8 sm:py-8 sm:my-auto sm:border-l border-gray-200 sm:border-t-0 border-t my-4 pt-4'>
+                <h3 class="mb-2 text-xl font-bold ">Desarrollar</h3>
+                <p class="text-gray-500">investigación científica y técnica de excelencia en el área de la biomedicina con particular interés en los campos de virología, parasitología, patología e inmunología.</p>
+            </div>
+            <div className='sm:pl-8 sm:py-8 sm:my-auto sm:border-l border-gray-200 sm:border-t-0 border-t my-4 pt-4'>
+                <h3 class="mb-2 text-xl font-bold ">Contribuir</h3>
+                <p class="text-gray-500">a la formación integral de investigadores, técnicos y profesionales del área biomédica.</p>
+            </div>
+            <div className='sm:pl-8 sm:py-8 sm:my-auto sm:border-l border-gray-200 sm:border-t-0 border-t my-4 pt-4'>
+                <h3 class="mb-2 text-xl font-bold ">Trasladar</h3>
+                <p class="text-gray-500">los conocimientos y procesos así generados para fortalecer la vinculación del sistema científico-tecnológico con el sistema clínico-asistencial.</p>
+            </div>
+            <div className='sm:pl-8 sm:py-8 sm:my-auto sm:border-l border-gray-200 sm:border-t-0 border-t my-4 pt-4'>
+                <h3 class="mb-2 text-xl font-bold ">Elaborar</h3>
+                <p class="text-gray-500">planes de investigación básica y clínica con aplicación sobre el diagnóstico y tratamiento focalizados.</p>
+            </div>
+            <div className='sm:pl-8 sm:py-8 sm:my-auto sm:border-l border-gray-200 sm:border-t-0 border-t my-4 pt-4'>
+                <h3 class="mb-2 text-xl font-bold ">Difundir</h3>
+                <p class="text-gray-500">los resultados de su actividad organizando seminarios y cursos especiales de actualización y estableciendo relaciones de colaboración con similares organismos de investigación del país y el extranjero.</p>
+            </div>
           </div>
         </motion.div>
       </div>
