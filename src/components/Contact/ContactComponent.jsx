@@ -8,7 +8,7 @@ const ContactComponent = () => {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
     className='max-w-7xl mx-auto'>
-      <section class="container mx-auto text-gray-600 body-font relative py-24 px-5 lg:px-0">
+      <section class="container mx-auto text-gray-600 body-font relative py-24 px-5">
         <div class="flex flex-col py-4">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
             <div class="w-24 h-full bg-[#009cde]"></div>

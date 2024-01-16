@@ -14,7 +14,7 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
   }
 
   return (
-    <section class="text-gray-600 body-font mt-16 mx-auto max-w-7xl px-4 lg:px-0">
+    <section class="text-gray-600 body-font mt-16 mx-auto max-w-7xl px-5">
       {selectedPersonal && (
         <PersonalUnicoComponent open={open} setOpen={setOpen} personal={selectedPersonal} />
       )}

@@ -4,7 +4,7 @@ import React from 'react'
 
 const ServicioHeader = ({servicio}) => {
   return (
-    <section class="text-gray-600 body-font mt-16 max-w-7xl mx-auto px-4 lg:px-0 ">
+    <section class="text-gray-600 body-font mt-16 max-w-7xl mx-auto px-5">
       <motion.div 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

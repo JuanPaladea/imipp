@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const GrupoDeInvestigacionPublicacionesComponent = ({publicaciones, titulo}) => {
   return (
     <section class="text-gray-600 body-font overflow-hidden bg-gray-100">
-      <div className='max-w-7xl mx-auto px-4 pb-12 xl:px-0'>
+      <div className='max-w-7xl mx-auto px-5 pb-12'>
         <div class="flex flex-col">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
             <div class="w-24 h-full bg-[#009cde]"></div>

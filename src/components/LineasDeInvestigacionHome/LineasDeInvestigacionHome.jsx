@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const LineasDeInvestigacionHome = () => {
   return (
     <div className='bg-gray-100'>
-      <section class="text-gray-600 body-font max-w-7xl mx-auto px-5 lg:px-0">
+      <section class="text-gray-600 body-font max-w-7xl mx-auto px-5">
         <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

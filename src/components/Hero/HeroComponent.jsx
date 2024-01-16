@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const HeroComponent = () => {
   return (
-      <section class="text-gray-600 body-font px-5 lg:px-0 max-w-7xl mx-auto bg-white">
+      <section class="text-gray-600 body-font px-5 max-w-7xl mx-auto bg-white">
         <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
