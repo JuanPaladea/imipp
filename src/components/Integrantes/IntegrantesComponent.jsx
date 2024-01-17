@@ -44,7 +44,7 @@ const IntegrantesComponent = ({integrantes, titulo}) => {
             class="items-center bg-gray-50 rounded-lg shadow sm:flex hover:cursor-pointer"
             onClick={() => handleClick(integrante)}
             >
-              <img alt={integrante.nombre} class="md:h-48 md:w-48 h-72 w-72 rounded-lg sm:rounded-none sm:rounded-l-lg mx-auto" src={integrante.imagen}/>
+              <img alt={integrante.nombre} class="md:h-48 md:w-48 h-72 w-72 rounded-lg sm:rounded-none sm:rounded-l-lg sm:mx-0 mx-auto" src={integrante.imagen}/>
               <div class="p-5 h-full">
                 <h2 class="text-xl font-bold tracking-tight text-gray-900">{integrante.nombre} </h2>
                 <h3 class="text-gray-500">{integrante.cargo} </h3>

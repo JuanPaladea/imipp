@@ -14,6 +14,11 @@ import EBV from '../pages/EBV'
 import Hepatitis from '../pages/Hepatitis'
 import TumoresSolidos from '../pages/TumoresSolidos'
 import Sifilis from '../pages/Sifilis'
+import Becarios from '../pages/Becarios'
+import CPA from '../pages/CPA'
+import IHQ from '../pages/IHQ'
+import Secuenciacion from '../pages/Secuenciacion'
+import Curso from '../pages/Curso'
 
 const MainRouter = () => {
   const location = useLocation();
@@ -42,7 +47,12 @@ const MainRouter = () => {
           <Route path='/Sifilis'element={<Sifilis/>}/>
           <Route path='/Tumores-Solidos'element={<TumoresSolidos/>}/>
           <Route path='/Investigadores'element={<Investigadores/>}/>
+          <Route path='/Becarios'element={<Becarios/>}/>
+          <Route path='/CPA'element={<CPA/>}/>
           <Route path='/FISH' element={<FISH/>} />
+          <Route path='/IHQ' element={<IHQ/>} />
+          <Route path='/Curso-Biologia-Molecular' element={<Curso/>} />
+          <Route path='/Secuenciacion' element={<Secuenciacion/>} />
           <Route path='/Contacto'element={<Contact/>}/>
           <Route path='/Loader'element={<Loader/>}/>
           <Route path='*' element={<ErrorComponent/>} />

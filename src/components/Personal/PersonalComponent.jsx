@@ -18,7 +18,7 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
       {selectedPersonal && (
         <PersonalUnicoComponent open={open} setOpen={setOpen} personal={selectedPersonal} />
       )}
-      <div class="container mx-auto py-24">
+      <div class="container mx-auto py-12">
         <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -44,8 +44,8 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
             class="items-center bg-gray-50 rounded-lg shadow sm:flex hover:cursor-pointer"
             onClick={() => handleClick(persona)}
             >
-              <img alt={persona.nombre} class="md:h-48 md:w-48 h-72 w-72 rounded-lg sm:rounded-none sm:rounded-l-lg mx-auto my-auto" src={persona.imagen}/>
-              <div class="p-5">
+              <img alt={persona.nombre} class="md:h-48 md:w-48 h-72 w-72 rounded-lg sm:rounded-none sm:rounded-l-lg sm:mx-0 mx-auto" src={persona.imagen}/>
+              <div class="p-5 h-full">
                 <h2 class="text-xl font-bold tracking-tight text-gray-900">{persona.nombre} </h2>
                 <h3 class="text-gray-500">{persona.cargo} </h3>
                 <p class="mt-3 mb-4 font-light text-gray-500">{persona.descripcionCorta} </p>

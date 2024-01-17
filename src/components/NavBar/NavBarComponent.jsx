@@ -19,8 +19,8 @@ const integrantes = [
 
 const gruposDeInvestigacion = [
   { name: 'Chagas', description: 'Conoce al grupo enfocado en el estudio de Parasitología y Chagas del IMIPP', href: '/Chagas', icon: ChevronDoubleRightIcon },
-  { name: 'Virus de Epstein-Barr', description: 'Conoce al grupo enfocado en el estudio del Virus de Epstein-Barr (EBV)', href: '/EBV', icon: ChevronDoubleRightIcon },
   { name: 'Patologías Hepáticas', description: 'Conoce al grupo enfocado en el estudio de la Hepatitis B, Hepatitis C y Hepatitis Autoinmune', href: 'Hepatitis', icon: ChevronDoubleRightIcon },
+  { name: 'Virus de Epstein-Barr', description: 'Conoce al grupo enfocado en el estudio del Virus de Epstein-Barr (EBV)', href: '/EBV', icon: ChevronDoubleRightIcon },
   { name: 'Biomarcadores en Tumores Sólidos', description: 'Conoce al grupo enfocado en el estudio de biomarcadores en patologías pediátricas', href: '/Tumores-Solidos', icon: ChevronDoubleRightIcon },
   { name: 'Sífilis', description: 'Conoce al grupo enfocado en el estudio de sífilis congénita', href: '/Sifilis', icon: ChevronDoubleRightIcon },
 ]

@@ -33,13 +33,15 @@ const GrupoDeInvestigacionPublicacionesComponent = ({publicaciones, titulo}) => 
                   <p class="mt-1 text-gray-500 text-sm">{publicacion.fecha}</p>
                 </div>
                 <div class="md:flex-grow md:w-5/6">
-                  <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{publicacion.titulo}</h2>
-                  <p class="leading-relaxed">{publicacion.autores}</p>
-                  <Link to={publicacion.link} target='_blank' class="text-indigo-500 inline-flex items-center mt-4">Ver mas
-                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
+                  <Link to={publicacion.link} target='_blank'>
+                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 hover:underline ">{publicacion.titulo}</h2>
+                    <p class="leading-relaxed">{publicacion.autores}</p>
+                    <div target='_blank' class="text-indigo-500 inline-flex items-center mt-4">Ver mas
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
                   </Link>
                 </div>
               </motion.div>

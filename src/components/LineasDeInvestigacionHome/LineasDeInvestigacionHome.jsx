@@ -20,51 +20,107 @@ const LineasDeInvestigacionHome = () => {
               <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Conoce la líneas de investigación que se desarrollan en el IMIPP</p>
             </div>
           </div>
-          <div class="flex flex-wrap -m-4">
-            <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="flex flex-wrap justify-center -m-4">
+            <motion.div 
+            whileTap={{ scale: 0.9 }}
+            class="xl:w-1/3 sm:w-1/2 p-4">
               <Link to="/Chagas">
-                <div class="bg-gray-100 rounded-lg">
-                  <motion.img 
-                  whileTap={{ scale: 0.9 }}
-                  class="h-40 rounded-lg shadow w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/epwMVSd.jpg" alt="content"/>
-                  <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Enfermedades Infecciosas Ignoradas</h2>
-                  <p class="leading-relaxed text-base">Chagas, Toxoplasmosis y Sífilis congénita</p>
+                <div class="bg-gray-200 p-2 rounded-lg flex flex-col h-full justify-between hover:scale-105 hover:opacity-85 transition-all">
+                  <div>
+                    <img
+                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/FoJY1HY.jpg" alt="content"/>
+                    <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Parasitología y Chagas</h2>
+                    <p class="leading-relaxed text-base">La enfermedad de Chagas es una infección parasitaria causada por el protozoo Trypanosoma cruzi.</p>
+                  </div>
+                  <div class="text-indigo-500 inline-flex items-center mt-4">Ver mas
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
                 </div>
               </Link>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
+            </motion.div>
+            <motion.div 
+            whileTap={{ scale: 0.9 }}
+            class="xl:w-1/3 sm:w-1/2 p-4">
+              <Link to="/Sifilis">
+                <div class="bg-gray-200 p-2 rounded-lg flex flex-col h-full justify-between hover:scale-105 hover:opacity-85 transition-all">
+                  <div>
+                    <img
+                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/2OzB9tU.jpg" alt="content"/>
+                    <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Sífilis Congénita</h2>
+                    <p class="leading-relaxed text-base">La sífilis es una infección bacteriana de transmisión sexual causada por la bacteria Treponema pallidum.</p>
+                  </div>
+                  <div class="text-indigo-500 inline-flex items-center mt-4">Ver mas
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+            <motion.div 
+            whileTap={{ scale: 0.9 }}
+            class="xl:w-1/3 sm:w-1/2 p-4">
               <Link to="/EBV">
-                <div class="bg-gray-100 rounded-lg">
-                  <motion.img 
-                  whileTap={{ scale: 0.9 }}
-                  class="h-40 rounded-lg shadow w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/Uu3TyC4.jpg" alt="content"/>
-                  <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Virus de Epstein-Barr</h2>
-                  <p class="leading-relaxed text-base">El Virus de Epstein-Barr (EBV) es un virus de la familia de los herpes que infecta células B en humanos.</p>
+                <div class="bg-gray-200 p-2 rounded-lg flex flex-col h-full justify-between hover:scale-105 hover:opacity-85 transition-all">
+                  <div>
+                    <img
+                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/Uu3TyC4.jpg" alt="content"/>
+                    <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Virus de Epstein-Barr</h2>
+                    <p class="leading-relaxed text-base">El Virus de Epstein-Barr (EBV) es un virus de la familia de los herpes que infecta células B en humanos.</p>
+                  </div>
+                  <div class="text-indigo-500 inline-flex items-center mt-4">Ver mas
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
                 </div>
               </Link>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
+            </motion.div>
+            <motion.div 
+            whileTap={{ scale: 0.9 }}
+            class="xl:w-1/3 sm:w-1/2 p-4">
               <Link to="/Hepatitis">
-                <div class="bg-gray-100 rounded-lg">
-                  <motion.img 
-                  whileTap={{ scale: 0.9 }}
-                  class="h-40 rounded-lg shadow w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/0rG79xD.jpg" alt="content"/>
-                  <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Patologías hepáticas: Hepatitis B, Hepatitis C y Hepatitis Autoinmune</h2>
-                  <p class="leading-relaxed text-base">Las patologías hepáticas abarcan una amplia gama de trastornos que afectan el hígado.</p>
+                <div class="bg-gray-200 p-2 rounded-lg flex flex-col h-full justify-between hover:scale-105 hover:opacity-85 transition-all">
+                  <div>
+                    <img
+                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/rzdjF3v.jpg" alt="content"/>
+                    <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Patologías hepáticas: Hepatitis B, Hepatitis C y Hepatitis Autoinmune</h2>
+                    <p class="leading-relaxed text-base">Las patologías hepáticas abarcan una amplia gama de trastornos que afectan el hígado.</p>
+                  </div>
+                  <div class="text-indigo-500 inline-flex items-center mt-4">Ver mas
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
                 </div>
               </Link>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
+            </motion.div>
+            <motion.div 
+            whileTap={{ scale: 0.9 }}
+            class="xl:w-1/3 sm:w-1/2 p-4">
               <Link to="/Tumores-Solidos">
-                <div class="bg-gray-100 rounded-lg">
-                  <motion.img 
-                  whileTap={{ scale: 0.9 }}
-                  class="h-40 rounded-lg shadow w-full object-cover object-center mb-6 hover:scale-105 hover:opacity-85 transition-all" src="https://i.imgur.com/yIPupxT.jpg" alt="content"/>
-                  <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Biomarcadores en Patologías Pediátricas</h2>
-                  <p class="leading-relaxed text-base">Los biomarcadores en tumores sólidos son moléculas o características biológicas que proporcionan información sobre el desarrollo, progresión y respuesta al tratamiento de los cánceres sólidos.</p>
+                <div class="bg-gray-200 p-2 rounded-lg flex flex-col h-full justify-between hover:scale-105 hover:opacity-85 transition-all">
+                  <div>
+                    <img
+                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/6YWl8qo.jpg" alt="content"/>
+                    <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Biomarcadores en Patologías Pediátricas</h2>
+                    <p class="leading-relaxed text-base">Los biomarcadores en tumores sólidos son moléculas o características biológicas que proporcionan información sobre el desarrollo, progresión y respuesta al tratamiento de los cánceres sólidos.</p>
+                  </div>
+                  <div class="text-indigo-500 inline-flex items-center mt-4">Ver mas
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
                 </div>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </section>
