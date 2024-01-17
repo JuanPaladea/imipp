@@ -79,11 +79,11 @@ export default function NavBarComponent({location}) {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
+          <Link to="/" className={`px-2 tracking-tight font-extrabold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             Inicio
           </Link>
           <Popover className="relative">
-            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
+            <Popover.Button className={`flex items-center gap-x-1 px-2 tracking-tight font-extrabold text-md p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
               Grupos de Investigación
               <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
             </Popover.Button>
@@ -118,7 +118,7 @@ export default function NavBarComponent({location}) {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
+            <Popover.Button className={`flex items-center gap-x-1 px-2 tracking-tight font-extrabold text-md p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
               Integrantes
               <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
             </Popover.Button>
@@ -153,7 +153,7 @@ export default function NavBarComponent({location}) {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className={`flex items-center gap-x-1 text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
+            <Popover.Button className={`flex items-center gap-x-1 px-2 tracking-tight font-extrabold text-md p-1 rounded hover:bg-[#009cde] transition all ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
               Servicios
               <ChevronDownIcon className={`h-5 w-5 flex-none ${scrolled ? 'text-white' : 'text-gray-900'}`} aria-hidden="true" />
             </Popover.Button>
@@ -187,7 +187,7 @@ export default function NavBarComponent({location}) {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <Link to="/Contacto" className={`text-sm px-2 font-semibold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
+          <Link to="/Contacto" className={`px-2 tracking-tight font-extrabold leading-6 p-1 rounded hover:bg-[#009cde] transition background-color ease-in 150ms ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             Contacto
           </Link>
         </Popover.Group>
@@ -219,14 +219,14 @@ export default function NavBarComponent({location}) {
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
                   to="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
+                  className="-mx-3 block rounded-lg px-3 py-2 tracking-tight font-extrabold text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                 >
                   Inicio
                 </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 tracking-tight font-extrabold text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms">
                         Grupos de Investigación 
                         <ChevronDownIcon
                           className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
@@ -250,7 +250,7 @@ export default function NavBarComponent({location}) {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 tracking-tight font-extrabold text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms">
                         Integrantes
                         <ChevronDownIcon
                           className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
@@ -273,7 +273,7 @@ export default function NavBarComponent({location}) {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 tracking-tight font-extrabold text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms">
                         Servicios
                         <ChevronDownIcon
                           className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
@@ -296,7 +296,7 @@ export default function NavBarComponent({location}) {
                 <Link
                   to="/Contacto"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
+                  className="-mx-3 block rounded-lg px-3 py-2 tracking-tight font-extrabold text-gray-900 hover:bg-[#def5ff] transition background-color ease-in 150ms"
                 >
                   Contacto
                 </Link>
