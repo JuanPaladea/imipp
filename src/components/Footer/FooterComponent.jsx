@@ -8,7 +8,7 @@ const FooterComponent = () => {
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
-    class="mx-auto max-w-7xl border-t border-gray-200">
+    class="mx-auto max-w-7xl border-t border-gray-200 mt-12">
       <div class="container py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <Link to="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <div class="w-64 flex-shrink-0 md:mx-0 text-center md:mt-0 mt-10">
