@@ -1,11 +1,15 @@
 import { AcademicCapIcon, BeakerIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ImagenComponent from '../Galeria/ImagenComponent'
 
 const HeroComponent = () => {
+  const [open, setOpen] = useState(false)
+  
   return (
       <section class="text-gray-900 body-font bg-gray-100">
+        <ImagenComponent open={open} setOpen={setOpen} imagen='https://i.imgur.com/EwKpuHA.jpg'/>
         <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -56,8 +60,12 @@ const HeroComponent = () => {
               </motion.div>
             </Link>
           </div>
-          <div class="lg:w-1/2 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-            <img class="object-cover object-center w-full h-full shadow" src="https://i.imgur.com/C6mSe8x.jpg" alt="stats"/>
+          <div class="lg:w-1/2 rounded-lg overflow-hidden mt-6 sm:mt-0 hover:scale-105 transition">
+            <motion.img 
+            whileTap={{ scale: 0.9}}
+            onClick={() => {
+              setOpen(true)}}
+            class="object-cover w-full shadow cursor-pointer" src="https://i.imgur.com/EwKpuHA.jpg" alt="stats"/>
           </div>
         </motion.div>
       </section>
