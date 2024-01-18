@@ -88,7 +88,7 @@ const LineasDeInvestigacionHome = () => {
                 <div class="bg-gray-200 p-2 rounded-lg flex flex-col h-full justify-between hover:scale-105 hover:opacity-85 transition-all">
                   <div>
                     <img
-                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/rzdjF3v.jpg" alt="content"/>
+                    class="h-40 rounded-lg shadow w-full object-cover object-center mb-6" src="https://i.imgur.com/5COtdL6.jpg" alt="content"/>
                     <h2 class="text-lg text-gray-900 font-extrabold title-font mb-4">Patologías hepáticas: Hepatitis B, Hepatitis C y Hepatitis Autoinmune</h2>
                     <p class="leading-relaxed text-base">Las patologías hepáticas abarcan una amplia gama de trastornos que afectan el hígado.</p>
                   </div>
