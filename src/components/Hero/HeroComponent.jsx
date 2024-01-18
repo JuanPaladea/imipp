@@ -57,7 +57,7 @@ const HeroComponent = () => {
             </Link>
           </div>
           <div class="lg:w-1/2 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-            <img class="object-cover object-center w-full h-full shadow" src="https://i.imgur.com/WReS5he.jpg" alt="stats"/>
+            <img class="object-cover object-center w-full h-full shadow" src="https://i.imgur.com/C6mSe8x.jpg" alt="stats"/>
           </div>
         </motion.div>
       </section>

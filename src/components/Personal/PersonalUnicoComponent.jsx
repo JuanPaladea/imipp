@@ -49,9 +49,15 @@ const PersonalUnicoComponent = ({open, setOpen, personal}) => {
                       <h3 class="text-gray-500">{personal.cargo} </h3>
                       <p class="mt-3 mb-4 font-light text-gray-700">{personal.descripcionLarga} </p>
                       <span class="flex- space-x-4 sm:mt-0">
+                        {(personal.link.trim() !== '') && 
                         <Link target='_blank' to={personal.link}>
-                          <img width="32" alt="US-NLM-PubMed-Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/32px-US-NLM-PubMed-Logo.svg.png"/>
+                          <img
+                            width="52"
+                            alt="US-NLM-PubMed-Logo"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/2560px-US-NLM-PubMed-Logo.svg.png"
+                          />
                         </Link>
+                        }
                       </span>
                       </div>
                     </div>

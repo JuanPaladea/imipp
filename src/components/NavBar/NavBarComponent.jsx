@@ -57,7 +57,7 @@ export default function NavBarComponent({location}) {
 
   return (
     <header className={`${scrolled ? 'bg-transparent' : 'bg-white'} ${scrollBorder ? '' : 'border-b border-gray-200'} fixed mx-auto top-0 w-full transition duration-500 z-20`}>
-      <nav className={`flex items-center justify-between py-2 p-5 max-w-7xl mx-auto`} aria-label="Global">
+      <nav className={`flex items-center justify-between py-2 p-5 max-w-7xl mx-auto w-full`} aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">IMIPP</span>

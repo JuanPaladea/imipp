@@ -9,9 +9,15 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
   const [open, setOpen] = useState(false)
 
   const handleClick = (persona) => {
-    setSelectedPersonal(persona)
-    setOpen(true)
-  }
+    // Open PersonalUnicoComponent if it's not a link
+    setOpen(true);
+    setSelectedPersonal(persona);
+  };
+
+  const handleLinkClick = (event) => {
+    // Prevent handleClick from being triggered when clicking the link
+    event.stopPropagation();
+  };
 
   return (
     <section class="text-gray-600 body-font mt-24 mx-auto max-w-7xl px-5">
@@ -49,11 +55,20 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
                 <h2 class="text-xl font-bold tracking-tight text-gray-900">{persona.nombre} </h2>
                 <h3 class="text-gray-500">{persona.cargo} </h3>
                 <p class="mt-3 mb-4 font-light text-gray-500">{persona.descripcionCorta} </p>
-                <span class="flex- space-x-4 sm:mt-0">
-                  <Link target='_blank' to={persona.link}>
-                    <img width="32" alt="US-NLM-PubMed-Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/32px-US-NLM-PubMed-Logo.svg.png"/>
-                  </Link>
-                </span>
+                  {(persona.link || persona.link.trim() !== '') && (
+                    <Link
+                      target="_blank"
+                      to={persona.link}
+                      className="link w-fit"
+                      onClick={(event) => handleLinkClick(event)}
+                    >
+                      <img
+                        width="52"
+                        alt="US-NLM-PubMed-Logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/2560px-US-NLM-PubMed-Logo.svg.png"
+                      />
+                    </Link>
+                  )}
               </div>
             </motion.div>
           )})}
