@@ -4,7 +4,7 @@ import React from 'react'
 const HeaderComponent = () => {
   return (
     <header>
-      <div className="w-full h-screen bg-center bg-cover mx-auto bg-[url('https://i.imgur.com/VyhtrBj.jpeg')]">
+      <div className="w-full h-dvh bg-center bg-cover mx-auto bg-[url('https://i.imgur.com/VyhtrBj.jpeg')]">
         <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 py-12">
           <div className="text-justify">
             <div className="container px-5 mx-auto">

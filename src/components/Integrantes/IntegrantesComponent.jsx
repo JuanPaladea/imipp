@@ -61,7 +61,8 @@ const IntegrantesComponent = ({ integrantes, titulo }) => {
                 <h2 className="text-xl font-bold tracking-tight text-gray-900">{integrante.nombre} </h2>
                 <h3 className="text-gray-500">{integrante.cargo} </h3>
                 <p className="mt-3 mb-4 font-light text-gray-500">{integrante.descripcionCorta} </p>
-                {(integrante.link || integrante.link.trim() !== '') && (
+                {integrante.link ? 
+                (integrante.link.trim() !== '') && (
                     <Link
                       target="_blank"
                       to={integrante.link}
@@ -74,7 +75,8 @@ const IntegrantesComponent = ({ integrantes, titulo }) => {
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/2560px-US-NLM-PubMed-Logo.svg.png"
                       />
                     </Link>
-                  )}
+                  ):
+                  ''}
               </div>
             </motion.div>
           ))}

@@ -55,7 +55,8 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
                 <h2 class="text-xl font-bold tracking-tight text-gray-900">{persona.nombre} </h2>
                 <h3 class="text-gray-500">{persona.cargo} </h3>
                 <p class="mt-3 mb-4 font-light text-gray-500">{persona.descripcionCorta} </p>
-                  {(persona.link || persona.link.trim() !== '') && (
+                  {persona.link ? 
+                  (persona.link.trim() !== '') && (
                     <Link
                       target="_blank"
                       to={persona.link}
@@ -68,7 +69,7 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/2560px-US-NLM-PubMed-Logo.svg.png"
                       />
                     </Link>
-                  )}
+                  ) : ''}
               </div>
             </motion.div>
           )})}
