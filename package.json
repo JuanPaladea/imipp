@@ -9,6 +9,11 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "homepage": "https://wwww.imipp.com",
+  "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+  }
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
