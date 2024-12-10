@@ -63,7 +63,7 @@ const SeminariosComponent = () => {
         <div className='container mx-auto text-gray-600 body-font relative py-12 px-5'>
           <div class="flex flex-col py-4">
             <div class="h-1 bg-gray-200 rounded overflow-hidden">
-              <div class="w-24 h-full bg-[#009cde]"></div>
+              <div class="w-full lg:w-24 h-full bg-[#009cde]"></div>
             </div>
             <div class="flex flex-wrap sm:flex-row flex-col py-6">
               <h1 class="sm:w-2/5 text-gray-900 text-3xl tracking-tight font-extrabold mb-2 sm:mb-4">Seminarios</h1>

@@ -31,7 +31,7 @@ const PersonalComponent = ({personal, titulo, descripcion}) => {
         transition={{ duration: 1 }}
         class="flex flex-col">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
-            <div class="w-24 h-full bg-[#009cde]"></div>
+            <div class="w-full lg:w-24 h-full bg-[#009cde]"></div>
           </div>
           <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
             <h1 class="sm:w-2/5 text-gray-900 text-3xl tracking-tight font-extrabold mb-2 sm:mb-0">{titulo}</h1>

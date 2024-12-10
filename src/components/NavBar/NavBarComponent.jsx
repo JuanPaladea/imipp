@@ -12,9 +12,9 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Link } from 'react-router-dom'
 
 const integrantes = [
-  { name: 'Investigadores', description: 'Conoce a los investigadores que conforman el IMIPP', href: '/Investigadores', icon: UsersIcon },
-  { name: 'Becarios', description: 'Conoce a los becarios desarrollando su tesis doctoral o trabajo pos-doctoral en el IMIPP', href: '/Becarios', icon: AcademicCapIcon },
-  { name: 'Personal de Apoyo', description: 'Conoce a los integrantes de la Carrera del Personal de Apoyo que desempeñan su trabajo en el IMIPP', href: '/CPA', icon: BeakerIcon },
+  { name: 'Investigadores', description: 'Conocé a los investigadores que conforman el IMIPP', href: '/Investigadores', icon: UsersIcon },
+  { name: 'Becarios', description: 'Conocé a los becarios del IMIPP', href: '/Becarios', icon: AcademicCapIcon },
+  { name: 'Personal de Apoyo', description: 'Conocé a los integrantes de la Carrera del Personal de Apoyo que desempeñan su trabajo en el IMIPP', href: '/CPA', icon: BeakerIcon },
 ]
 
 const gruposDeInvestigacion = [

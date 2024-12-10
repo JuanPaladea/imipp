@@ -8,7 +8,7 @@ const GrupoDeInvestigacionPublicacionesComponent = ({publicaciones, titulo}) => 
       <div className='max-w-7xl mx-auto px-5 pb-12'>
         <div class="flex flex-col">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
-            <div class="w-24 h-full bg-[#009cde]"></div>
+            <div class="w-full lg:w-24 h-full bg-[#009cde]"></div>
           </div>
           <motion.div 
           initial={{ opacity: 0 }}

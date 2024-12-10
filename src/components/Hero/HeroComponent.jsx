@@ -28,7 +28,7 @@ const HeroComponent = () => {
                   <UsersIcon className='h-7 w-7'/>
                 </div>
                   <div>
-                    <h2 class="title-font font-medium text-3xl">12</h2>
+                    <h2 class="title-font font-medium text-3xl">15</h2>
                     <p class="leading-relaxed">Investigadores</p>
                   </div>
               </motion.div>
@@ -41,7 +41,7 @@ const HeroComponent = () => {
                   <AcademicCapIcon className='h-7 w-7'/>
                 </div>
                 <div>
-                  <h2 class="title-font font-medium text-3xl">14</h2>
+                  <h2 class="title-font font-medium text-3xl">6</h2>
                   <p class="leading-relaxed">Becarios</p>
                 </div>
               </motion.div>

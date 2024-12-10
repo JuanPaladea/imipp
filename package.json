@@ -12,6 +12,7 @@
   },
   "homepage": "https://wwww.imipp.com",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "axios": "^1.6.5",

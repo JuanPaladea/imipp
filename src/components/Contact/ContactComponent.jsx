@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
+
+const SERVICE_ID = import.meta.env.VITE_APP_SERVICE_ID || "";
+const TEMPLATE_ID = import.meta.env.VITE_APP_TEMPLATE_ID || "";
+const PUBLIC_KEY = import.meta.env.VITE_APP_PUBLIC_KEY || "";
 
 const ContactComponent = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
-  const db = getFirestore();
+  const form = useRef()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,26 +35,16 @@ const ContactComponent = () => {
     return emailRegex.test(email);
   };
 
-  const contactUs = async (name, email, message) => {
-    const contactosCollection = collection(db, 'Contactos');
-
+  const contactUs = async () => {
     try {
-      // Add contact info to the "Contactos" collection
       await toast.promise(
-        addDoc(contactosCollection, {
-          name: name,
-          email: email,
-          message: message,
-          timestamp: new Date(),
-        }),
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY),
         {
           loading: 'Enviando mensaje...',
           success: <b>Mensaje enviado con éxito</b>,
           error: <b>Error al enviar el mensaje</b>,
         }
       );
-
-      // Reset form fields on successful submission
       setName('');
       setEmail('');
       setMessage('');
@@ -70,7 +63,7 @@ const ContactComponent = () => {
       <section class="container mx-auto text-gray-600 body-font relative py-12 px-5">
         <div class="flex flex-col py-4">
           <div class="h-1 bg-gray-200 rounded overflow-hidden">
-            <div class="w-24 h-full bg-[#009cde]"></div>
+            <div class="w-full lg:w-24 h-full bg-[#009cde]"></div>
           </div>
           <div class="flex flex-wrap sm:flex-row flex-col py-6">
             <h1 class="sm:w-2/5 text-gray-900 text-3xl tracking-tight font-extrabold mb-2 sm:mb-0">Contacto</h1>
@@ -96,7 +89,7 @@ const ContactComponent = () => {
           <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Contacto</h2>
             <p class="leading-relaxed mb-5 text-gray-600">Completa el formulario para ponerte en contacto con nosotros</p>
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={handleSubmit}>
               <div class="relative mb-4">
                 <label for="name" class="leading-7 text-sm text-gray-600">
                   Nombre
