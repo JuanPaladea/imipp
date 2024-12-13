@@ -1,5 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+
 import ErrorComponent from '../components/Error/ErrorComponent'
 import NavBarComponent from '../components/NavBar/NavBarComponent'
 import FooterComponent from '../components/Footer/FooterComponent'
@@ -7,9 +9,7 @@ import Home from '../pages/Home'
 import Contact from '../pages/Contact'
 import Chagas from '../pages/Chagas'
 import Investigadores from '../pages/Investigadores'
-import { AnimatePresence } from 'framer-motion'
 import FISH from '../pages/FISH'
-import Loader from '../pages/Loader'
 import EBV from '../pages/EBV'
 import Hepatitis from '../pages/Hepatitis'
 import TumoresSolidos from '../pages/TumoresSolidos'
@@ -54,7 +54,6 @@ const MainRouter = () => {
           <Route path='/Curso-Biologia-Molecular' element={<Curso/>} />
           <Route path='/Secuenciacion' element={<Secuenciacion/>} />
           <Route path='/Contacto'element={<Contact/>}/>
-          <Route path='/Loader'element={<Loader/>}/>
           <Route path='*' element={<ErrorComponent/>} />
       </Routes>
       <FooterComponent key='footer'/>

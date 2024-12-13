@@ -1,49 +1,29 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useQuery } from 'react-query'
+import { collection, getDocs } from 'firebase/firestore'
+
+import { db } from '../utils/db'
 import PersonalComponent from '../components/Personal/PersonalComponent'
-import { useCollection, useUnico } from '../hooks/useCollection'
 import LoaderComponent from '../components/Loader/LoaderComponent'
+import { customOrder } from '../utils/customOrder'
+import useMetaTags from '../utils/metaTags'
 
 const Investigadores = () => {
-  const {resultados, loading} = useCollection('Personal/5KoMGhUq3sHzq9VpQSol/Investigadores') 
-  
-  if (loading) {
-    return <div className='flex align-center justify-center h-full w-full mt-40'><LoaderComponent/></div>
+  useMetaTags(
+    'IMIPP | Investigadores',
+    'Página Oficial del Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas (IMIPP) - CONICET - GCBA. Conoce a los Investigadores que conforman al IMIPP',
+    'IMIPP, Investigación, Ciencia, CONICET, Investigadores'
+  )
+
+  const fetchData = async () => {
+    const result = collection(db, 'Personal/5KoMGhUq3sHzq9VpQSol/Investigadores')
+    const snapshot = await getDocs(result)
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
   }
 
-  const customOrder = {
-    'Investigador Principal': 1,
-    'Investigadora Principal': 2,
-    'Investigador Clínico Principal': 3,
-    'Investigadora Clínica Principal': 4,
-    'Investigador Independiente': 5,
-    'Investigadora Independiente': 6,
-    'Investigador Clínico Independiente': 7,
-    'Investigadora Clínica Independiente': 8,
-    'Investigador Adjunto': 9,
-    'Investigadora Adjunta': 10,
-    'Investigador Clínico Adjunto': 11,
-    'Investigadora Clínica Adjunta': 12,
-    'Investigador Asistente': 13,
-    'Investigadora Asistente': 14,
-    'Investigador Externo': 15,
-    'Investigadora Externa': 16,
-    'Becario PosDoctoral': 17,
-    'Becaria PosDoctoral': 18,
-    'Becario Doctoral': 19,
-    'Becaria Doctoral': 20,
-    'Becario Externo': 21,
-    'Becaria Externa': 22,
-    'Profesional Principal': 23,
-    'Profesional Adjunto': 24,
-    'Profesional Adjunta': 25,
-    'Profesional Asistente': 26,
-    'Técnico Principal': 27,
-    'Técnica Principal': 28,
-    'Técnico Asistente': 29,
-    'Técnica Asistente': 30,
-  };
-    
+  const { data: resultados = [], isLoading } = useQuery('investigadores', fetchData, {staleTime: 300000})
+  
   const sortedResultados = resultados.slice().sort((a, b) => {
     const cargoA = a.cargo;
     const cargoB = b.cargo;
@@ -51,6 +31,10 @@ const Investigadores = () => {
     // Use customOrder values for sorting
     return customOrder[cargoA] - customOrder[cargoB];
   });  
+
+  if (isLoading) {
+    return <div className='flex align-center justify-center h-full w-full mt-40'><LoaderComponent/></div>
+  }
 
   return (
     sortedResultados &&

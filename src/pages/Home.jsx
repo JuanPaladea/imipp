@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import HeaderComponent from '../components/Header/HeaderComponent';
 import HeroComponent from '../components/Hero/HeroComponent';
 import ContactComponent from '../components/Contact/ContactComponent';
@@ -6,10 +8,15 @@ import LineasDeInvestigacionHome from '../components/LineasDeInvestigacionHome/L
 import GaleriaComponent from '../components/Galeria/GaleriaComponent';
 import ServiciosComponent from '../components/Servicios/ServiciosComponent';
 import ObjetivosComponent from '../components/Objetivos/ObjetivosComponent';
-import { motion } from 'framer-motion';
 import SeminariosComponent from '../components/Seminarios/SeminariosComponent';
+import useMetaTags from '../utils/metaTags';
 
 const Home = () => {
+  useMetaTags(
+    'IMIPP | Inicio',
+    'Página Oficial del Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas (IMIPP) - CONICET - GCBA',
+    'IMIPP, Investigación, Ciencia, CONICET'
+  )
 
   return (
     <motion.div 

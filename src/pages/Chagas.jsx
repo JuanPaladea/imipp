@@ -1,61 +1,57 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { useQuery } from 'react-query'
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore'
+
+import { db } from '../utils/db'
 import GrupoDeInvestigacionHeader from '../components/GrupoDeInvestigacionHeader/GrupoDeInvestigacionHeader'
 import GrupoDeInvestigacionPublicacionesComponent from '../components/GrupoDeInvestigacionPublicaciones/GrupoDeInvestigacionPublicacionesComponent'
 import ContactComponent from '../components/Contact/ContactComponent'
-import { motion } from 'framer-motion'
 import IntegrantesComponent from '../components/Integrantes/IntegrantesComponent'
-import { useCollection, useUnico } from '../hooks/useCollection'
 import LoaderComponent from '../components/Loader/LoaderComponent'
+import { customOrder } from '../utils/customOrder'
+import useMetaTags from '../utils/metaTags'
+
 
 const Chagas = () => {
-  const {resultado, loading} = useUnico('LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas', 'G1bgOIvmarjRI08JmLPD')
-  const {resultados: integrantes, loading: loadingIntegrantes} = useCollection('LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas/G1bgOIvmarjRI08JmLPD/Integrantes')
-  const {resultados: publicaciones, loading: loadingPublicaciones} = useCollection('LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas/G1bgOIvmarjRI08JmLPD/Publicaciones')
+  useMetaTags(
+    'IMIPP | Chagas',
+    'Página Oficial del Instituto Multidisciplinario de Investigaciones en Patologías Pediátricas (IMIPP) - CONICET - GCBA. Conoce al grupo de Parasitología y Chagas del IMIPP',
+    'IMIPP, Investigación, Ciencia, CONICET, Chagas, Parasitología, Grupo de Investigación'
+  )
 
-  if (loading && loadingIntegrantes && loadingPublicaciones) {
-    return <div className='flex align-center justify-center h-full w-full mt-40'><LoaderComponent/></div>
+  const fetchData = async () => {
+    const result = doc(db, 'LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas', 'G1bgOIvmarjRI08JmLPD')
+    const docSnapshot = await getDoc(result)
+    return { id: docSnapshot.id, ...docSnapshot.data() }
   }
 
-  const customOrder = {
-    'Investigador Principal': 1,
-    'Investigadora Principal': 2,
-    'Investigador Clínico Principal': 3,
-    'Investigadora Clínica Principal': 4,
-    'Investigador Independiente': 5,
-    'Investigadora Independiente': 6,
-    'Investigador Clínico Independiente': 7,
-    'Investigadora Clínica Independiente': 8,
-    'Investigador Adjunto': 9,
-    'Investigadora Adjunta': 10,
-    'Investigador Clínico Adjunto': 11,
-    'Investigadora Clínica Adjunta': 12,
-    'Investigador Asistente': 13,
-    'Investigadora Asistente': 14,
-    'Investigador Externo': 15,
-    'Investigadora Externa': 16,
-    'Becario PosDoctoral': 17,
-    'Becaria PosDoctoral': 18,
-    'Becario Doctoral': 19,
-    'Becaria Doctoral': 20,
-    'Becario Externo': 21,
-    'Becaria Externa': 22,
-    'Profesional Principal': 23,
-    'Profesional Adjunto': 24,
-    'Profesional Adjunta': 25,
-    'Profesional Asistente': 26,
-    'Técnico Principal': 27,
-    'Técnica Principal': 28,
-    'Técnico Asistente': 29,
-    'Técnica Asistente': 30,
-  };
+  const fetchDataIntegrantes = async () => {
+    const resultCollection = collection(db, 'LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas/G1bgOIvmarjRI08JmLPD/Integrantes')
+    const snapshot = await getDocs(resultCollection)
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+  }
+
+  const fetchDataPublicaciones = async () => {
+    const resultCollection = collection(db, 'LineasDeInvestigacion/s1rVSM4a6ovPJvT9BJMt/Chagas/G1bgOIvmarjRI08JmLPD/Publicaciones')
+    const snapshot = await getDocs(resultCollection)
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+  }
+
+  const { data: resultado, isLoading } = useQuery('chagas', fetchData, {staleTime: 300000})
+  const { data: integrantes = [], isLoadingIntegrantes } = useQuery('chagasIntegrantes', fetchDataIntegrantes, {staleTime: 300000})
+  const { data: publicaciones = [], isLoadingPublicaciones } = useQuery('chagasPublicaciones', fetchDataPublicaciones, {staleTime: 300000})
     
   const sortedResultados = integrantes.slice().sort((a, b) => {
     const cargoA = a.cargo;
     const cargoB = b.cargo;
   
-    // Use customOrder values for sorting
     return customOrder[cargoA] - customOrder[cargoB];
   });  
+
+  if (isLoading || isLoadingIntegrantes || isLoadingPublicaciones) {
+    return <div className='flex align-center justify-center h-full w-full mt-40'><LoaderComponent/></div>
+  }
 
   return (
     resultado &&
@@ -63,7 +59,8 @@ const Chagas = () => {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
-        <GrupoDeInvestigacionHeader lineaInvestigacion={resultado} />
+        <GrupoDeInvestigacionHeader 
+          lineaInvestigacion={resultado} />
         <GrupoDeInvestigacionPublicacionesComponent 
           publicaciones={publicaciones}
           titulo='Conoce las publicaciones del grupo de Parasitología y Chagas del IMIPP' />

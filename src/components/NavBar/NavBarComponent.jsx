@@ -170,7 +170,7 @@ export default function NavBarComponent({location}) {
               <Popover.Panel className="absolute -left-60 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
                 {servicios.map((item) => (
-                    <Link to={item.href}>
+                    <Link key={item.name} to={item.href}>
                       <Popover.Button key={item.name} className="group relative flex items-center text-start gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#def5ff] transition background-color ease-in 150ms">
                         <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                           <item.icon className="h-6 w-6 group-hover:text-[#009cde]" aria-hidden="true" />
